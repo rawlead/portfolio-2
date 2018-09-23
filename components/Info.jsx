@@ -20,8 +20,7 @@ const SkillItems = ({ logos, headings }) => {
           .heading {
             font-size: .8rem;
           }
-    
-          `}
+        `}
         </style>
       </div>,
     );
@@ -32,7 +31,6 @@ const SkillItems = ({ logos, headings }) => {
     </nav>
   );
 };
-
 
 const Info = () => (
   <section className="section has-background-black">
@@ -68,13 +66,11 @@ const Info = () => (
             <div className="column is-marginless">
               <SkillItems
                 headings={[
-
                   'jsx',
                   'ui design',
                   'materialize',
                 ]}
                 logos={[
-
                   '../static/logos/react.svg',
                   '../static/logos/ui.png',
                   '../static/logos/materialize.png',
@@ -96,7 +92,6 @@ const Info = () => (
               />
             </div>
           </div>
-
 
           {/* row second */}
           <div className="columns">
@@ -126,14 +121,12 @@ const Info = () => (
               </h1>
               <SkillItems
                 headings={[
-
                   'react',
                   'next',
                   'vue',
                   'jquery',
                 ]}
                 logos={[
-
                   '../static/logos/react.svg',
                   '../static/logos/next.png',
                   '../static/logos/vuejs.svg',
@@ -168,7 +161,6 @@ const Info = () => (
             <div className="column is-marginless">
               <SkillItems
                 headings={[
-
                   'intellij',
                   'photoshop',
                   'illustrator',
@@ -190,16 +182,8 @@ const Info = () => (
           display: block;
         }
         .main-content {
-            /* box-shadow:0 3rem 3rem -1rem rgba(10,10,10,.2); */
-            padding: 4rem;
-            position: relative;
-            z-index: 10;
-           
-        }
-        .title-row {
-            box-shadow:0 .8rem .8rem -1rem rgba(10,10,10,.2);
-            margin-top: -6rem;
-            padding: 1rem;
+          padding: 4rem;
+          position: relative; 
         }
         .skills-col-title {
           margin-bottom: .4rem;
@@ -211,14 +195,11 @@ const Info = () => (
         }
         .columns {
           margin-bottom:0;
-
         }
-
         @media screen and (max-width: 769px) {
           .section {
               padding: 1rem .25rem;
           }
-
           .section .column {
               padding: 0;
               margin: 2.5rem 0 0.1rem 0;
@@ -232,11 +213,6 @@ const Info = () => (
                 padding: 1rem
             }
         }
-
-
-
-
-
     `}
     </style>
   </section>

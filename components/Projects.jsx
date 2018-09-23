@@ -19,7 +19,6 @@ class Projects extends React.Component {
   render() {
     return (
       <React.Fragment>
-        {/* <Parallax bottom delay={800}> */}
         <Parallax
           className="hero-parallax"
           offsetYMax={100}
@@ -42,7 +41,6 @@ class Projects extends React.Component {
               <div className="column is-half">
                 <div className="sticky-item">
                   <Fade delay={800}>
-
                     <Parallax
                       className="custom-class"
                       offsetXMax={80}
@@ -65,7 +63,6 @@ class Projects extends React.Component {
                     ]}
                     color="#0a0a0a"
                   />
-                  {/* </Fade> */}
                 </div>
               </div>
               <div className="column content">
@@ -83,7 +80,6 @@ class Projects extends React.Component {
                      is using EB for deploying, S3 for storing image files and RDS as a
                      database provider.
                   </p>
-
                   <div className="content-collapse">
                     <h3>Functional</h3>
                     <h5>Users are able to:</h5>
@@ -99,7 +95,6 @@ class Projects extends React.Component {
                       <li>Comment photos and explore comments made by other users</li>
                       <li>Search for categories or other users</li>
                     </ul>
-
                     <h3>Technical Sheet</h3>
                     <h5>Technologies I got involved with while working on this project.</h5>
                     <ul>
@@ -133,7 +128,6 @@ class Projects extends React.Component {
             <div className="columns is-variable is-6">
               <div className="column">
                 <div className="sticky-item">
-                  {/* <Fade delay={1500}> */}
                   <Parallax
                     className="custom-class"
                     offsetXMax={80}
@@ -144,7 +138,6 @@ class Projects extends React.Component {
                       Ebrofy
                     </h1>
                   </Parallax>
-                  {/* <Fade delay={800}> */}
                   <SlideshowGallery
                     images={[
                       '../static/p/ebro-1.jpg',
@@ -156,7 +149,6 @@ class Projects extends React.Component {
                     ]}
                     color="#2c3e50"
                   />
-                  {/* </Fade> */}
                 </div>
               </div>
               <div className="column content">
@@ -213,7 +205,6 @@ class Projects extends React.Component {
                       Filter App
                     </h1>
                   </Parallax>
-                  {/* <Fade delay={800}> */}
                   <SlideshowGallery
                     images={[
                       '../static/p/filterapp-1.jpg',
@@ -225,7 +216,6 @@ class Projects extends React.Component {
                     ]}
                     color="hsl(0, 0%, 40%)"
                   />
-                  {/* </Fade> */}
                 </div>
               </div>
               <div className="column content">
@@ -243,8 +233,6 @@ class Projects extends React.Component {
                     Built on
                     <a href="https://en.wikipedia.org/wiki/K-means_clustering"> k-means clustering algorithm</a>
                   </p>
-
-
                   <h6>Users of the applications are able to:</h6>
                   <ul>
                     <li>Upload image to the website for further processing</li>
@@ -274,7 +262,6 @@ class Projects extends React.Component {
             </div>
           </div>
         </div>
-
         <style jsx>
           {`
         .wrapper-project2 {
@@ -314,7 +301,6 @@ class Projects extends React.Component {
         .container-wrapper {
             padding-top: 11rem;
             margin-bottom: -3rem;
-            
         }
         .sticky-item {
             position: -webkit-sticky;
@@ -338,7 +324,6 @@ class Projects extends React.Component {
           height:45px;
           transition: all .3s ease-in-out;
         }
-        
         .octocat:hover {
           background: url('../static/octocat.png');
           background-size: contain;
@@ -347,7 +332,6 @@ class Projects extends React.Component {
           border-radius: 0%;
           cursor: pointer;
         }
- 
         @media screen and (max-width: 769px) {
             .sticky-container {
                 padding: 2rem 1rem 3rem 1rem;
@@ -359,5 +343,4 @@ class Projects extends React.Component {
     );
   }
 }
-
 export default Projects;
