@@ -33,10 +33,10 @@ class Projects extends React.Component {
         </Parallax>
 
         {/* Project 1 */}
-        <div className="container-wrapper wrapper-project1">
+        <div className="container-wrapper">
           <div className="container sticky-container has-background-white">
-            <a className="octocat-container" href="!">
-              <img src="../static/github.svg" className="octocat" alt="octocat" />
+            <a className="octocat-container image" target="_blank" rel="noopener noreferrer" href="https://github.com/rawlead/Photo-IS">
+              <div className="octocat" />
             </a>
             <div className="columns is-variable is-8">
               <div className="column is-half">
@@ -49,19 +49,11 @@ class Projects extends React.Component {
                       offsetXMin={0}
                       tag="figure"
                     >
-                      {/* <Fade delay={1500}> */}
                       <h1 className="is-size-4 has-text-weight-bold">
                         Photo IS
                       </h1>
-                      {/* </Fade> */}
                     </Parallax>
                   </Fade>
-                  <awesome-slider height="x60%" bullets="true" color="grey" arrows="true">
-                    <item source="../static/p/portal-1.jpg" />
-                    <item source="../static/p/portal-2.jpg" />
-                    <item source="../static/p/portal-3.jpg" />
-                  </awesome-slider>
-                  {/* <Fade delay={800}> */}
                   <SlideshowGallery
                     images={[
                       '../static/p/portal-1.jpg',
@@ -303,6 +295,7 @@ class Projects extends React.Component {
             border: 1px solid hsl(0, 0%, 86%);
             padding: 2rem 4rem 5rem 4rem;
             box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+            border: 1px solid hsl(0,0,90%);
         }
         .content-collapse {
             margin-bottom:1rem;
@@ -337,13 +330,24 @@ class Projects extends React.Component {
           right: 1rem;
         }
         .octocat {
+          background: url('../static/github.png');
+          background-size: contain;
           position:relative;
           z-index: 10;
           width:45px;
           height:45px;
+          transition: all .3s ease-in-out;
+        }
+        
+        .octocat:hover {
+          background: url('../static/octocat.png');
+          background-size: contain;
+          transform: scale(1.1);
+          transform: rotate(-360deg);
+          border-radius: 0%;
+          cursor: pointer;
         }
  
-
         @media screen and (max-width: 769px) {
             .sticky-container {
                 padding: 2rem 1rem 3rem 1rem;

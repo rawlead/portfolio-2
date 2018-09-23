@@ -5,8 +5,8 @@ import Footer from './Footer';
 
 class Layout extends React.Component {
   componentDidMount() {
-    document.body.style.backgroundColor = 'hsl(0, 0%, 90%)';
-    // document.body.style.backgroundColor = '#0a0a0a';
+
+
   }
 
   render() {
@@ -25,7 +25,7 @@ class Layout extends React.Component {
         {children}
 
         <Footer />
-        <style jsx>
+        <style global jsx>
           {`
             body {
               background-color: hsl(0,0,90%);

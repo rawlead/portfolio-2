@@ -32,9 +32,9 @@ const Hero = () => (
           tag="figure"
         >
           <Fade delay={800}>
-            <figure className="image is-128x128" style={{ margin: '0 auto' }}>
-              <img src="../static/me.jpg" alt="myself" />
-            </figure>
+            <a className="image is-128x128" style={{ margin: '0 auto' }} href="!">
+              <div className="myself" />
+            </a>
           </Fade>
         </Parallax>
         <Parallax
@@ -62,10 +62,12 @@ const Hero = () => (
 
     <style jsx>
       {`
+    
         .hero {
           background: url("../static/barcelona-1.jpg") center bottom;
           background-size: cover;
           display:block;
+          overflow: hidden;
         }
         .hero-content {
           position:absolute;
@@ -76,16 +78,21 @@ const Hero = () => (
         .image {
           box-shadow:0 3rem 3rem -1rem rgba(10,10,10,.2);
         }
-        .image img {
-          border-radius: 50%;
+  
+        .myself {
+          background: url('../static/me.jpg');
+          background-size: cover;
           transition: all .3s ease-in-out;
+          width: 128px;
+          height: 128px;
+          border-radius: 50%;
         }
-     
-        .image img:hover {
+        .myself:hover {
+          background: url('../static/me2.jpg');
+          background-size: cover;
           transform: scale(1.1);
           transform: rotate(-360deg);
           border-radius: 0%;
-
           cursor: pointer;
         }
 
@@ -234,6 +241,7 @@ const Hero = () => (
             transform: translateY(0vh) translateX(110vw) scale(0.45);
           }
         }
+
       `}
     </style>
   </Parallax>

@@ -27,7 +27,7 @@ const SkillItems = ({ logos, headings }) => {
     );
   }
   return (
-    <nav className="level is-mobile" style={{ padding: '1.2rem 0', borderBottom: '1px solid hsl(0, 0%, 86%)', borderTop: '1px solid hsl(0, 0%, 86%)' }}>
+    <nav className="level is-mobile" style={{ padding: '.6rem 0 0 0', borderBottom: '1px solid hsl(0, 0%, 86%)', borderTop: '1px solid hsl(0, 0%, 86%)' }}>
       {items}
     </nav>
   );
@@ -40,7 +40,6 @@ const Info = () => (
       className="custom-class"
       offsetYMax={30}
       offsetYMin={-30}
-      slowerScrollRate={false}
       tag="figure"
     >
       <div className="container main-content has-text-centered has-shadow">
@@ -158,15 +157,11 @@ const Info = () => (
                   'git',
                   'aws',
                   'heroku',
-
-
                 ]}
                 logos={[
                   '../static/logos/github.png',
                   '../static/logos/amazonwebservices.svg',
                   '../static/logos/heroku.svg',
-
-
                 ]}
               />
             </div>
@@ -179,7 +174,6 @@ const Info = () => (
                   'illustrator',
                 ]}
                 logos={[
-
                   '../static/logos/intellij.svg',
                   '../static/logos/photoshop.svg',
                   '../static/logos/illustrator.svg',
@@ -189,7 +183,6 @@ const Info = () => (
           </div>
         </Fade>
       </div>
-
     </Parallax>
     <style jsx>
       {`
@@ -197,11 +190,11 @@ const Info = () => (
           display: block;
         }
         .main-content {
-            box-shadow:0 3rem 3rem -1rem rgba(10,10,10,.2);
+            /* box-shadow:0 3rem 3rem -1rem rgba(10,10,10,.2); */
             padding: 4rem;
             position: relative;
             z-index: 10;
-            margin-bottom: 5rem;
+           
         }
         .title-row {
             box-shadow:0 .8rem .8rem -1rem rgba(10,10,10,.2);
@@ -239,6 +232,11 @@ const Info = () => (
                 padding: 1rem
             }
         }
+
+
+
+
+
     `}
     </style>
   </section>
