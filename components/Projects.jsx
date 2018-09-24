@@ -38,7 +38,7 @@ class Projects extends React.Component {
               <div className="octocat" />
             </a>
             <div className="columns is-variable is-8">
-              <div className="column is-half">
+              <div className="column is-three-fifths">
                 <div className="sticky-item">
                   <Fade delay={800}>
                     <Parallax
@@ -111,7 +111,7 @@ class Projects extends React.Component {
                     </ul>
                   </div>
                   <input
-                    className="button has-text-weight-bold is-black"
+                    className="button is-outlined has-text-weight-bold is-black"
                     type="button"
                     onClick={this.openCollapse.bind(this)}
                     value="More..."
@@ -126,7 +126,7 @@ class Projects extends React.Component {
         <div className="container-wrapper wrapper-project2">
           <div className="container sticky-container has-background-white">
             <div className="columns is-variable is-6">
-              <div className="column">
+              <div className="column is-three-fifths">
                 <div className="sticky-item">
                   <Parallax
                     className="custom-class"
@@ -193,7 +193,7 @@ class Projects extends React.Component {
         <div className="container-wrapper wrapper-project3">
           <div className=" container sticky-container has-background-white">
             <div className="columns is-variable is-6">
-              <div className="column">
+              <div className="column is-three-fifths">
                 <div className="sticky-item">
                   <Parallax
                     className="custom-class"
@@ -282,13 +282,13 @@ class Projects extends React.Component {
             border: 1px solid hsl(0, 0%, 86%);
             padding: 2rem 4rem 5rem 4rem;
             box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
-            border: 1px solid hsl(0,0,90%);
         }
         .content-collapse {
             margin-bottom:1rem;
             max-height: 0;
             overflow: hidden;
-            transition: max-height 1s ease-out;
+            -webkit-transition: max-height 300ms ease;
+            transition: max-height 300ms ease;
         }
         .content {
             padding: 2.5rem 0 0 0;

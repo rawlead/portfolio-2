@@ -57,10 +57,9 @@ class SlideshowGallery extends React.Component {
                   font-weight:bolder;
                   padding: 8px 12px;
                   position: absolute;
-                  z-index: 20;
-                  bottom: -20px;
-                  left:20px;
-                  background-color: hsl(0,0,86%);
+                  z-index: 30;
+                  bottom: -30px;
+                  right: -30px;
                   transform: translate(-50%, -50%);
               }
               .swing-out-top-bck {
@@ -125,7 +124,7 @@ class SlideshowGallery extends React.Component {
           </figure>
           <style jsx>
             {`
-            .preview-active {
+              .preview-active {
                   cursor: pointer;
               }
               .preview-inactive {
@@ -170,16 +169,18 @@ class SlideshowGallery extends React.Component {
           </div>
         </Fade>
 
-        <Fade delay={1700}>
-          {/* PREVIOUS BUTTON */}
-          <button className="prev button" style={{ backgroundColor: color }} type="button" onClick={() => this.plusSlides(-1)}>
-            <i className="fas fa-angle-left" />
-          </button>
-          {/* NEXT BUTTON */}
-          <button className="next button" style={{ backgroundColor: color }} type="button" onClick={() => this.plusSlides(1)}>
-            <i className="fas fa-angle-right" />
-          </button>
-        </Fade>
+        <div className="buttons-container">
+          <Fade delay={1700}>
+            {/* PREVIOUS BUTTON */}
+            <button className="prev button is-outlined" style={{ backgroundColor: color }} type="button" onClick={() => this.plusSlides(-1)}>
+              <i className="fas fa-angle-left" />
+            </button>
+            {/* NEXT BUTTON */}
+            <button className="next button is-outlined" style={{ backgroundColor: color }} type="button" onClick={() => this.plusSlides(1)}>
+              <i className="fas fa-angle-right" />
+            </button>
+          </Fade>
+        </div>
         <style jsx>
           {`
             .gallery-container {
@@ -201,26 +202,30 @@ class SlideshowGallery extends React.Component {
               from {opacity: .4} 
               to {opacity: 1}
             }
+            .buttons-container {
+              position: absolute;
+              bottom: -5rem;
+              user-select: none;
+              -webkit-user-select: none;
+              z-index:15;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+            }
             .prev,
             .next {
               cursor: pointer;
-              position: absolute;
-              bottom: -3.5rem;
               padding: 5px 15px;
               color: white;
               font-weight: bold;
               font-size: 20px;
-              user-select: none;
-              -webkit-user-select: none;
-              z-index:15;
               opacity: .7;
+              border:none;
             }
             .prev {
-              left: 35%;
+              margin-right: .7rem;
             }
-            .next {
-              right: 35%;
-            }
+        
             .prev:hover,
             .next:hover {
               opacity: .8;

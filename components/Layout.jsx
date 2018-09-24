@@ -17,10 +17,14 @@ const Layout = ({ children }) => (
     {children}
 
     <Footer />
+
     <style global jsx>
       {`
         body {
-          background-color: hsl(0,0,90%);
+          background-color: #f2f2f2;
+        }
+        .button {
+          border-radius: 0 !important;
         }
       `}
     </style>
