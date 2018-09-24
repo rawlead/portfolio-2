@@ -162,14 +162,14 @@ class SlideshowGallery extends React.Component {
           </div>
         </div>
         {/* SLIDE PREVIEW ITEMS */}
-        <Fade delay={1500}>
+        <Fade delay={800}>
           <div className="columns is-variable is-1 is-mobile">
             {previews}
           </div>
         </Fade>
 
         <div className="buttons-container">
-          <Fade delay={1700}>
+          <Fade delay={1200}>
             {/* PREVIOUS BUTTON */}
             <button className="prev button is-black is-outlined" type="button" onClick={() => this.plusSlides(-1)}>
               <i className="fas fa-angle-left" />

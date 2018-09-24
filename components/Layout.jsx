@@ -29,6 +29,22 @@ const Layout = ({ children }) => (
         .button {
           border-radius: 0 !important;
         }
+        .section-title {
+          text-align: center;
+          max-width: 185px;
+          margin-left: auto;
+          margin-right: auto;
+          text-transform: uppercase;
+          padding-bottom: 1rem;
+          font-weight: bold;
+        }
+        .section-title__dark {
+          border-bottom: 3px solid #4a4a4a;
+        }
+        .section-title__light {
+          border-bottom: 3px solid #f5f5f5;
+          color: #f5f5f5;
+        }
 
 
 

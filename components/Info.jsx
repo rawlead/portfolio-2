@@ -28,15 +28,15 @@ const SkillItems = ({ logos, headings }) => {
 const Info = () => (
   <section className="section has-background-black">
     <div className="main-content has-text-centered">
-      <Fade delay={500} cascade>
+      <Fade delay={200} cascade>
         {/* row main description */}
         <Parallax
           offsetYMax={50}
           offsetYMin={-50}
           tag="figure"
         >
-          <div>
-            <h1 className="is-size-3 has-text-white-ter has-text-weight-bold">About</h1>
+          <div style={{ minHeight: '50vh' }}>
+            <h1 className="is-size-3 section-title section-title__light">About</h1>
             <div className="columns">
               <div className="column content ">
                 <h6 className="has-text-white-ter">
@@ -48,9 +48,8 @@ const Info = () => (
             </div>
           </div>
         </Parallax>
-
         <div className="title-row">
-          <h1 className="is-size-3 has-text-white-ter has-text-weight-bold">Skills</h1>
+          <h1 className="is-size-3 has-text-weight-bold section-title section-title__light">Technical Skills</h1>
         </div>
 
         {/* row first */}
@@ -94,7 +93,7 @@ const Info = () => (
         <div className="columns">
           <div className="column">
             <h1 className="skills-col-title has-text-white-ter">
-              Back-End
+              BACK-END
             </h1>
             <SkillItems
               headings={[
@@ -114,7 +113,7 @@ const Info = () => (
 
           <div className="column">
             <h1 className="skills-col-title has-text-white-ter">
-              JavaScript
+              JAVASCRIPT
             </h1>
             <SkillItems
               headings={[
@@ -136,7 +135,7 @@ const Info = () => (
         {/* row third */}
         <div className="columns is-marginless">
           <h1 className="column has-text-weight-bold has-text-white-ter">
-            Other
+            OTHER
           </h1>
         </div>
 
