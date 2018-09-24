@@ -42,12 +42,12 @@ const Hero = () => (
           slowerScrollRate={false}
           tag="figure"
         >
-          <Fade delay={1200}>
+          <Fade delay={1000}>
             <h1 className="title box-effect is-size-1 has-text-weight-bold has-text-white">
               Ivan Shyrai
             </h1>
           </Fade>
-          <Fade delay={1600}>
+          <Fade delay={1400}>
             <h2 className="subtitle has-text-white">
               Java Software Developer
             </h2>

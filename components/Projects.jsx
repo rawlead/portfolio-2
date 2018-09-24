@@ -19,10 +19,7 @@ class Projects extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="sticky-title">
-          <h1 className="is-size-3 has-text-centered  has-text-weight-bold">Projects</h1>
-        </div>
-
+        <h1 className="is-size-3 sticky-title section-title section-title__dark">Projects</h1>
         {/* Project 1 */}
         <div className="container-wrapper">
           <div className="container sticky-container has-background-white">
@@ -306,9 +303,9 @@ class Projects extends React.Component {
               display: flex;
               justify-content: center;
               align-items: flex-start;
+              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
               border: 1px solid hsl(0, 0%, 86%);
               padding: 2rem 2rem 4rem 2rem;
-              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
               max-width: 1152px;
             }
             .content-collapse {
@@ -320,12 +317,8 @@ class Projects extends React.Component {
             }
            
             .sticky-title {
-              padding: 3px 0;
               margin-top: 3rem;
               margin-bottom: -3rem;
-              max-width: 185px;
-              margin-left: auto;
-              margin-right: auto;
             }
             .container-wrapper {
               padding-top: 9rem;
