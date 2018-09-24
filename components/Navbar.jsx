@@ -41,8 +41,7 @@ const Navbar = () => (
         background: none;
       }
       .navbar:hover a {
-        font-size: 150%;
-        color: #0a0a0a !important;
+        font-size: 125%;
       }
       .navbar-item {
         display: inline-block;
@@ -51,7 +50,7 @@ const Navbar = () => (
         transition: all .1s ease-in-out;        
       }
       .navbar-item a:hover {
-        color: #fff !important;
+        color: hsl(0,0,20%) !important;
       }
       .bounce-top {
         -webkit-animation: bounce-top 1s 1.2s both;

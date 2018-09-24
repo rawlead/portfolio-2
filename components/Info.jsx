@@ -27,7 +27,7 @@ const SkillItems = ({ logos, headings }) => {
 
 const Info = () => (
   <section className="section has-background-black">
-    <div className="container main-content has-text-centered">
+    <div className="main-content has-text-centered">
       <Fade delay={500} cascade>
         {/* row main description */}
         <Parallax
@@ -180,6 +180,8 @@ const Info = () => (
         .main-content {
           padding: 4rem;
           position: relative; 
+          max-width: 1152px;
+          margin: 0 auto;
         }
         .skills-col-title {
           margin-bottom: .4rem;

@@ -19,17 +19,9 @@ class Projects extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Parallax
-          className="hero-parallax"
-          offsetYMax={100}
-          offsetYMin={-40}
-          slowerScrollRate
-          tag="figure"
-        >
-          <div className="container sticky-title hasba">
-            <h1 className="is-size-3 has-text-centered  has-text-black has-text-weight-bold">Projects</h1>
-          </div>
-        </Parallax>
+        <div className="sticky-title">
+          <h1 className="is-size-3 has-text-centered  has-text-weight-bold">Projects</h1>
+        </div>
 
         {/* Project 1 */}
         <div className="container-wrapper">
@@ -209,9 +201,8 @@ class Projects extends React.Component {
           </div>
         </div>
 
-
         { /* PROJECT 3 */}
-        <div className="container-wrapper wrapper-project2">
+        <div className="container-wrapper wrapper-project3">
           <div className="container sticky-container has-background-white">
             <a className="octocat-container image" target="_blank" rel="noopener noreferrer" href="https://github.com/rawlead/Photo-IS">
               <div className="octocat" />
@@ -301,49 +292,51 @@ class Projects extends React.Component {
         <style jsx>
           {`
             .wrapper-project2 {
-                background: -webkit-gradient(linear, left top, right top, from(#e67e22), to(#e74c3c));
-                background: -webkit-linear-gradient(left, #e67e22, #e74c3c);
-                background: -o-linear-gradient(left, #e67e22, #e74c3c);
-                background: linear-gradient(to right, #e67e22, #e74c3c);
+              background: -webkit-gradient(linear, left top, right top, from(#e67e22), to(#e74c3c));
+              background: -webkit-linear-gradient(left, #e67e22, #e74c3c);
+              background: -o-linear-gradient(left, #e67e22, #e74c3c);
+              background: linear-gradient(to right, #e67e22, #e74c3c);
             }
             .wrapper-project3 {
-                background: #232526;  /* fallback for old browsers */
-                background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-                background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+              background: #232526;  /* fallback for old browsers */
+              background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+              background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
             }
             .sticky-container {
-                display: flex;
-                justify-content: center;
-                align-items: flex-start;
-                border: 1px solid hsl(0, 0%, 86%);
-                padding: 2rem 4rem 5rem 4rem;
-                box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              border: 1px solid hsl(0, 0%, 86%);
+              padding: 2rem 2rem 4rem 2rem;
+              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+              max-width: 1152px;
             }
             .content-collapse {
-                margin-bottom:1rem;
-                max-height: 0;
-                overflow: hidden;
-                -webkit-transition: max-height 300ms ease;
-                transition: max-height 300ms ease;
+              margin-bottom:1rem;
+              max-height: 0;
+              overflow: hidden;
+              -webkit-transition: max-height 300ms ease;
+              transition: max-height 300ms ease;
             }
-            .content {
-                padding: 2.5rem 0 0 0;
-            }
+           
             .sticky-title {
-                padding: 13px;
-                top: -2rem;
-                margin-bottom: -5rem;
+              padding: 3px 0;
+              margin-top: 3rem;
+              margin-bottom: -3rem;
+              max-width: 185px;
+              margin-left: auto;
+              margin-right: auto;
             }
             .container-wrapper {
-                padding-top: 11rem;
-                margin-bottom: -3rem;
+              padding-top: 9rem;
+              margin-bottom: -3rem;
             }
             .sticky-item {
-                position: -webkit-sticky;
-                position: sticky;
-                top: 15px;
-                margin-top: -100px;
-                z-index: 100 !important;
+              position: -webkit-sticky;
+              position: sticky;
+              top: 15px;
+              margin-top: -100px;
+              z-index: 100 !important;
             }
             .octocat-container {
               position: absolute;

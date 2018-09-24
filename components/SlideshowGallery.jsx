@@ -150,7 +150,6 @@ class SlideshowGallery extends React.Component {
   }
 
   render() {
-    const { color } = this.props;
     const slides = this.createSlides();
     const previews = this.createPreviews();
 
@@ -172,11 +171,11 @@ class SlideshowGallery extends React.Component {
         <div className="buttons-container">
           <Fade delay={1700}>
             {/* PREVIOUS BUTTON */}
-            <button className="prev button is-outlined" style={{ backgroundColor: color }} type="button" onClick={() => this.plusSlides(-1)}>
+            <button className="prev button is-black is-outlined" type="button" onClick={() => this.plusSlides(-1)}>
               <i className="fas fa-angle-left" />
             </button>
             {/* NEXT BUTTON */}
-            <button className="next button is-outlined" style={{ backgroundColor: color }} type="button" onClick={() => this.plusSlides(1)}>
+            <button className="next button is-black is-outlined" type="button" onClick={() => this.plusSlides(1)}>
               <i className="fas fa-angle-right" />
             </button>
           </Fade>
@@ -204,7 +203,7 @@ class SlideshowGallery extends React.Component {
             }
             .buttons-container {
               position: absolute;
-              bottom: -5rem;
+              bottom: -4rem;
               user-select: none;
               -webkit-user-select: none;
               z-index:15;
@@ -215,12 +214,9 @@ class SlideshowGallery extends React.Component {
             .prev,
             .next {
               cursor: pointer;
-              padding: 5px 15px;
               color: white;
               font-weight: bold;
-              font-size: 20px;
               opacity: .7;
-              border:none;
             }
             .prev {
               margin-right: .7rem;
