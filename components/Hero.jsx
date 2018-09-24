@@ -57,10 +57,14 @@ const Hero = () => (
     </section>
     <style jsx>
       {`
+        .hero-parallax {
+          display: block !important;
+
+        }
         .hero {
           background: url("../static/barcelona-1.jpg") center bottom;
           background-size: cover;
-          display:block;
+          display: block !important;
           overflow: hidden;
         }
         .hero-content {

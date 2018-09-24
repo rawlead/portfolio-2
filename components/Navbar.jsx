@@ -4,11 +4,10 @@ import Link from 'next/link';
 const Navbar = () => (
   <React.Fragment>
     <nav className="navbar bounce-top">
-      <div className="navbar-item ha">
+      <div className="navbar-item">
         <Link href="/">
           <a href="!" className="has-text-white text-focus-in"><i className="fab fa-facebook fa-lg" /></a>
         </Link>
-
       </div>
       <div className="navbar-item">
         <Link href="/about">
@@ -50,7 +49,7 @@ const Navbar = () => (
         transition: all .1s ease-in-out;        
       }
       .navbar-item a:hover {
-        color: hsl(0,0,20%) !important;
+        color: #aaa !important;
       }
       .bounce-top {
         -webkit-animation: bounce-top 1s 1.2s both;

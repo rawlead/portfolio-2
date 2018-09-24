@@ -9,11 +9,11 @@ const SkillItems = ({ logos, headings }) => {
       <div key={i} className="level-item has-text-centered">
         <div>
           <div className="title" style={{ marginBottom: 0 }}>
-            <figure className="image is-24x24 " style={{ margin: 'auto auto 8px auto' }}>
+            <figure className="image is-32x32 " style={{ margin: 'auto auto 8px auto' }}>
               <img src={logos[i]} alt={`${headings[i]}-logo`} />
             </figure>
           </div>
-          <p className="heading has-text-weight-bold has-text-white-ter">{headings[i]}</p>
+          <p className="heading has-text-weight-bold has-text-white-ter" style={{ fontSize: '.85rem' }}>{headings[i]}</p>
         </div>
       </div>,
     );
@@ -54,7 +54,7 @@ const Info = () => (
 
         {/* row first */}
         <div className="columns is-marginless">
-          <h1 className="column has-text-weight-bold has-text-white-ter">
+          <h1 className="column is-size-5 has-text-weight-bold has-text-white-ter">
             HTML / CSS
           </h1>
         </div>
@@ -92,7 +92,7 @@ const Info = () => (
         {/* row second */}
         <div className="columns">
           <div className="column">
-            <h1 className="skills-col-title has-text-white-ter">
+            <h1 className="skills-col-title is-size-5 has-text-white-ter">
               BACK-END
             </h1>
             <SkillItems
@@ -112,7 +112,7 @@ const Info = () => (
           </div>
 
           <div className="column">
-            <h1 className="skills-col-title has-text-white-ter">
+            <h1 className="skills-col-title is-size-5 has-text-white-ter">
               JAVASCRIPT
             </h1>
             <SkillItems
@@ -134,7 +134,7 @@ const Info = () => (
 
         {/* row third */}
         <div className="columns is-marginless">
-          <h1 className="column has-text-weight-bold has-text-white-ter">
+          <h1 className="column is-size-5 has-text-weight-bold has-text-white-ter">
             OTHER
           </h1>
         </div>
@@ -174,7 +174,7 @@ const Info = () => (
     <style jsx>
       {`
         .section {
-          display: block;
+          display: block !important;
         }
         .main-content {
           padding: 4rem;

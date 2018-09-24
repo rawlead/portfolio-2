@@ -1,7 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 
-
 const Education = () => (
 
   <section className="wrapper">
@@ -20,7 +19,6 @@ const Education = () => (
             <p>Graduated: June 2018</p>
           </div>
         </div>
-
         <div className="column has-text-centered">
           <div className="content">
             <h3 className="is-uppercase">Machine Building College</h3>
@@ -56,7 +54,7 @@ const Education = () => (
       `}
     </style>
   </section>
-);
 
+);
 
 export default Education;
