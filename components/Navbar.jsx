@@ -4,10 +4,11 @@ import Link from 'next/link';
 const Navbar = () => (
   <React.Fragment>
     <nav className="navbar bounce-top">
-      <div className="navbar-item ">
+      <div className="navbar-item ha">
         <Link href="/">
-          <a href="!" className="has-text-white text-focus-in "><i className="fab fa-facebook fa-lg" /></a>
+          <a href="!" className="has-text-white text-focus-in"><i className="fab fa-facebook fa-lg" /></a>
         </Link>
+
       </div>
       <div className="navbar-item">
         <Link href="/about">

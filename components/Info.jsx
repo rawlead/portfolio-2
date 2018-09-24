@@ -195,6 +195,10 @@ const Info = () => (
         .title-row {
           margin-top:5rem;
         }
+        .oracle {
+          position: relative;
+          z-index: 50;
+        }
         @media screen and (max-width: 769px) {
           .section {
               padding: 1rem .25rem;
