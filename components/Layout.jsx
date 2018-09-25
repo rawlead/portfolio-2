@@ -1,28 +1,35 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Head from 'next/head';
 import Footer from './Footer';
-import gtag from '../gtag';
 
-const Layout = ({ children }) => (
-  <ParallaxProvider>
-    <Head>
-      {/* Google analytics tag */}
-      { gtag }
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-      <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-      <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" />
-      <title>Ivan Shyrai</title>
-    </Head>
 
-    {children}
+class Layout extends React.Component {
+  componentWillReceiveProps() {
+    ReactGA.initialize('UA-122686270-2');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }
 
-    <Footer />
+  render() {
+    const { children } = this.props;
+    return (
+      <ParallaxProvider>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" />
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+          <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
+          <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" />
+          <title>Ivan Shyrai</title>
+        </Head>
 
-    <style global jsx>
-      {`
+        { children }
+
+        <Footer />
+
+        <style global jsx>
+          {`
         body {
           background-color: #f2f2f2;
         }
@@ -84,7 +91,9 @@ const Layout = ({ children }) => (
           transform: scale(1);
         }
       `}
-    </style>
-  </ParallaxProvider>
-);
+        </style>
+      </ParallaxProvider>
+    );
+  }
+}
 export default Layout;
