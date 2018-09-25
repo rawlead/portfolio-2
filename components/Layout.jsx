@@ -6,7 +6,7 @@ import Footer from './Footer';
 
 
 class Layout extends React.Component {
-  componentWillReceiveProps() {
+  componentDidMount() {
     ReactGA.initialize('UA-122686270-2');
     ReactGA.pageview(window.location.pathname + window.location.search);
   }
