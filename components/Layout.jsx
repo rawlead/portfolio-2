@@ -2,10 +2,13 @@ import React from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Head from 'next/head';
 import Footer from './Footer';
+import gtag from '../gtag';
 
 const Layout = ({ children }) => (
   <ParallaxProvider>
     <Head>
+      {/* Google analytics tag */}
+      { gtag }
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
