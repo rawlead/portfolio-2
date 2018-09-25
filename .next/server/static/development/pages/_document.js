@@ -105,7 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GA_TRACKING_ID", function() { return GA_TRACKING_ID; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "pageview", function() { return pageview; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "event", function() { return event; });
-var GA_TRACKING_ID = '<YOUR_GA_TRACKING_ID>'; // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
+var GA_TRACKING_ID = 'UA-122686270-2'; // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 
 var pageview = function pageview(url) {
   window.gtag('config', GA_TRACKING_ID, {
@@ -127,10 +127,10 @@ var event = function event(_ref) {
 
 /***/ }),
 
-/***/ "./pages/_document.js":
-/*!****************************!*\
-  !*** ./pages/_document.js ***!
-  \****************************/
+/***/ "./pages/_document.jsx":
+/*!*****************************!*\
+  !*** ./pages/_document.jsx ***!
+  \*****************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -144,7 +144,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_jsx_server__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-jsx/server */ "styled-jsx/server");
 /* harmony import */ var styled_jsx_server__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_server__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _lib_gtag__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../lib/gtag */ "./lib/gtag.js");
-var _jsxFileName = "/Users/ivan/Desktop/portfolio/pages/_document.js";
+var _jsxFileName = "/Users/ivan/Desktop/portfolio/pages/_document.jsx";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -164,6 +164,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+/* eslint-disable */
 // _document is only rendered on the server side and not on the client side
 // Event handlers like onClick can't be added to this file
 // ./pages/_document.js
@@ -187,6 +188,7 @@ function (_Document) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("html", {
+        lang: "en",
         __source: {
           fileName: _jsxFileName,
           lineNumber: 20
@@ -311,13 +313,13 @@ function (_Document) {
 /***/ }),
 
 /***/ 0:
-/*!**********************************!*\
-  !*** multi ./pages/_document.js ***!
-  \**********************************/
+/*!***********************************!*\
+  !*** multi ./pages/_document.jsx ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! ./pages/_document.js */"./pages/_document.js");
+module.exports = __webpack_require__(/*! ./pages/_document.jsx */"./pages/_document.jsx");
 
 
 /***/ }),
