@@ -32,8 +32,8 @@ const Navbar = () => (
         left: auto;
         right: auto;
         text-align:center;
-        background-color: #0a0a0a;
         transition: all .3s ease-in-out;        
+        background-color: #0a0a0a;
         min-height: auto;
       }
       .navbar:hover {

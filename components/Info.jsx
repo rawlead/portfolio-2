@@ -13,7 +13,7 @@ const SkillItems = ({ logos, headings }) => {
               <img src={logos[i]} alt={`${headings[i]}-logo`} />
             </figure>
           </div>
-          <p className="heading has-text-weight-bold has-text-white-ter" style={{ fontSize: '.85rem' }}>{headings[i]}</p>
+          <p className="heading has-text-weight-bold has-text-white-ter" style={{ fontSize: '.8rem' }}>{headings[i]}</p>
         </div>
       </div>,
     );
@@ -54,7 +54,7 @@ const Info = () => (
 
         {/* row first */}
         <div className="columns is-marginless">
-          <h1 className="column is-size-5 has-text-weight-bold has-text-white-ter">
+          <h1 className="column is-size-4 has-text-weight-bold has-text-white-ter">
             HTML / CSS
           </h1>
         </div>

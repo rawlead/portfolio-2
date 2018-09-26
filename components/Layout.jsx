@@ -4,30 +4,15 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import Footer from './Footer';
 // import { initGA, logPageView } from '../utils/analytics';
 
-class Layout extends React.Component {
-  componentDidMount() {
- 
-  }
+const Layout = ({ children }) => (
+  <ParallaxProvider>
 
-  render() {
-    const { children } = this.props;
-    return (
-      <ParallaxProvider>
-        {/* <Head>
-          <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css" />
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
-          <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
-          <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" />
-          <title>Ivan Shyrai</title>
-        </Head> */}
+    {children}
 
-        { children }
+    <Footer />
 
-        <Footer />
-
-        <style global jsx>
-          {`
+    <style global jsx>
+      {`
         body {
           background-color: #f2f2f2;
         }
@@ -86,9 +71,8 @@ class Layout extends React.Component {
           transform: scale(1);
         }
       `}
-        </style>
-      </ParallaxProvider>
-    );
-  }
-}
+    </style>
+  </ParallaxProvider>
+);
+
 export default Layout;
