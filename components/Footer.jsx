@@ -6,16 +6,46 @@ const Footer = () => (
       <div className="columns">
         <div className="column has-text-centered">
           <div className="social-item">
-            <a href="!" className="social-item__anchor"><i className="fab fa-facebook fa-lg" /></a>
+            <a
+              href="https://www.facebook.com/ivanshyrai"
+              className="social-item__anchor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-facebook fa-lg" />
+            </a>
           </div>
+
           <div className="social-item">
-            <a href="!" className="social-item__anchor"><i className="fas fa-envelope fa-lg" /></a>
+            <a
+              href="mailto:ivan.shyrai@yahoo.com"
+              className="social-item__anchor"
+              target="_top"
+            >
+              <i className="fas fa-envelope fa-lg" />
+            </a>
           </div>
+
           <div className="social-item">
-            <a href="!" className="social-item__anchor"><i className="fab fa-linkedin fa-lg" /></a>
+            <a
+              href="https://www.linkedin.com/in/ivan-shyrai/"
+              className="social-item__anchor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-linkedin fa-lg" />
+            </a>
           </div>
+
           <div className="social-item">
-            <a href="!" className="social-item__anchor"><i className="fab fa-github fa-lg" /></a>
+            <a
+              href="https://github.com/rawlead"
+              className="social-item__anchor"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fab fa-github fa-lg" />
+            </a>
           </div>
         </div>
       </div>
@@ -29,7 +59,7 @@ const Footer = () => (
           <p>
             The source code is available on
             <a href="https://github.com/rawlead/portfolio-2" target="_blank" rel="noopener noreferrer">
-            &nbsp;GitHub
+              &nbsp;GitHub
             </a>
           </p>
           <p>2018</p>

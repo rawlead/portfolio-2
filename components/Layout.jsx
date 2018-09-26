@@ -16,6 +16,10 @@ const Layout = ({ children }) => (
         body {
           background-color: #f2f2f2;
         }
+        html,
+        body {
+            overflow: hidden;
+        } 
         * {
           font-family: 'Oswald', sans-serif !important;
         }

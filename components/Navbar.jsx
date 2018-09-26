@@ -1,28 +1,49 @@
 import React from 'react';
-import Link from 'next/link';
 
 const Navbar = () => (
   <React.Fragment>
     <nav className="navbar bounce-top">
       <div className="navbar-item">
-        <Link href="/">
-          <a href="!" className="has-text-white text-focus-in"><i className="fab fa-facebook fa-lg" /></a>
-        </Link>
+        <a
+          href="https://www.facebook.com/ivanshyrai"
+          className="has-text-white text-focus-in"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-facebook fa-lg" />
+        </a>
       </div>
+
       <div className="navbar-item">
-        <Link href="/about">
-          <a href="!" className="has-text-white text-focus-in "><i className="fas fa-envelope fa-lg" /></a>
-        </Link>
+        <a
+          href="mailto:ivan.shyrai@yahoo.com"
+          target="_top"
+          className="has-text-white text-focus-in"
+        >
+          <i className="fas fa-envelope fa-lg" />
+        </a>
       </div>
+
       <div className="navbar-item">
-        <Link href="/about">
-          <a href="!" className="has-text-white text-focus-in "><i className="fab fa-linkedin fa-lg" /></a>
-        </Link>
+        <a
+          href="https://www.linkedin.com/in/ivan-shyrai/"
+          className="has-text-white text-focus-in"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-linkedin fa-lg" />
+        </a>
       </div>
+
       <div className="navbar-item">
-        <Link href="/about">
-          <a href="!" className="has-text-white text-focus-in "><i className="fab fa-github fa-lg" /></a>
-        </Link>
+        <a
+          href="https://github.com/rawlead"
+          className="has-text-white text-focus-in"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-github fa-lg" />
+        </a>
       </div>
     </nav>
     <style jsx>
@@ -157,12 +178,10 @@ const Navbar = () => (
           opacity: 1;
         }
       }
-
       .text-focus-in {
         -webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.4s both;
                 animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1.4s both;
       }
-
       @-webkit-keyframes text-focus-in {
         0% {
           -webkit-filter: blur(12px);
