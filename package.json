@@ -1,14 +1,17 @@
 {
   "name": "portfolio",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "export": "npm run build && next export"
   },
   "dependencies": {
     "bulma": "^0.7.1",
+    "express": "^4.16.3",
     "next": "7.0.0",
+    "prismic-javascript": "^1.5.0",
+    "prismic-reactjs": "^0.3.1",
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-ga": "^2.5.3",
