@@ -1,83 +1,34 @@
 import React from 'react';
+import Social from './Social';
 
 const Navbar = () => (
   <React.Fragment>
-    <nav className="navbar bounce-top">
-      <div className="navbar-item">
-        <a
-          href="https://www.facebook.com/ivanshyrai"
-          className="has-text-white text-focus-in"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-facebook fa-lg" />
-        </a>
-      </div>
-
-      <div className="navbar-item">
-        <a
-          href="mailto:ivan.shyrai@yahoo.com"
-          target="_top"
-          className="has-text-white text-focus-in"
-        >
-          <i className="fas fa-envelope fa-lg" />
-        </a>
-      </div>
-
-      <div className="navbar-item">
-        <a
-          href="https://www.linkedin.com/in/ivan-shyrai/"
-          className="has-text-white text-focus-in"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-linkedin fa-lg" />
-        </a>
-      </div>
-
-      <div className="navbar-item">
-        <a
-          href="https://github.com/rawlead"
-          className="has-text-white text-focus-in"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-github fa-lg" />
-        </a>
+    <nav className="navbar-social bounce-top has-text-centered">
+      <div className="container">
+        <Social linkStyle={{ color: '#f5f5f5' }} />
       </div>
     </nav>
     <style jsx>
       {`
-      .navbar {
+      .navbar-social {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
         display: block;
-        text-align:center;
-        transition: all .3s ease-in-out;        
-        background-color: #0a0a0a;
-        min-height: auto;
+        transition: all .3s ease-in-out;    
+        padding: .4rem 0;  
       }
-      .navbar:hover {
-        background: none;
-      }
-      .navbar:hover a {
-        font-size: 125%;
-      }
-      .navbar-item {
-        display: inline-block;
-      }
-      .navbar-item a {
-        transition: all .1s ease-in-out;        
-      }
-      .navbar-item a:hover {
-        color: #aaa !important;
-      }
+
       .bounce-top {
         -webkit-animation: bounce-top 1s 1.2s both;
                 animation: bounce-top 1s 1.2s both;
       }
       @-webkit-keyframes bounce-top {
         0% {
-          -webkit-transform: translateY(-45px);
-                  transform: translateY(-45px);
+          -webkit-transform: translateY(-100px);
+                  transform: translateY(-100px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
           opacity: 1;
@@ -86,26 +37,26 @@ const Navbar = () => (
           opacity: 1;
         }
         40% {
-          -webkit-transform: translateY(-24px);
-                  transform: translateY(-24px);
+          -webkit-transform: translateY(-50px);
+                  transform: translateY(-50px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
         }
         65% {
+          -webkit-transform: translateY(-25px);
+                  transform: translateY(-25px);
+          -webkit-animation-timing-function: ease-in;
+                  animation-timing-function: ease-in;
+        }
+        82% {
           -webkit-transform: translateY(-12px);
                   transform: translateY(-12px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
         }
-        82% {
+        93% {
           -webkit-transform: translateY(-6px);
                   transform: translateY(-6px);
-          -webkit-animation-timing-function: ease-in;
-                  animation-timing-function: ease-in;
-        }
-        93% {
-          -webkit-transform: translateY(-4px);
-                  transform: translateY(-4px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
         }
@@ -128,8 +79,8 @@ const Navbar = () => (
       }
       @keyframes bounce-top {
         0% {
-          -webkit-transform: translateY(-45px);
-                  transform: translateY(-45px);
+          -webkit-transform: translateY(-100px);
+                  transform: translateY(-100px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
           opacity: 1;
@@ -138,26 +89,26 @@ const Navbar = () => (
           opacity: 1;
         }
         40% {
-          -webkit-transform: translateY(-24px);
-                  transform: translateY(-24px);
+          -webkit-transform: translateY(-50px);
+                  transform: translateY(-50px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
         }
         65% {
+          -webkit-transform: translateY(-25px);
+                  transform: translateY(-25px);
+          -webkit-animation-timing-function: ease-in;
+                  animation-timing-function: ease-in;
+        }
+        82% {
           -webkit-transform: translateY(-12px);
                   transform: translateY(-12px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
         }
-        82% {
+        93% {
           -webkit-transform: translateY(-6px);
                   transform: translateY(-6px);
-          -webkit-animation-timing-function: ease-in;
-                  animation-timing-function: ease-in;
-        }
-        93% {
-          -webkit-transform: translateY(-4px);
-                  transform: translateY(-4px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
         }

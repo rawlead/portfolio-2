@@ -2,10 +2,12 @@ import React from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 // import Head from 'next/head';
 import Footer from './Footer';
+import Navbar from './Navbar';
 // import { initGA, logPageView } from '../utils/analytics';
 
 const Layout = ({ children }) => (
   <ParallaxProvider>
+    <Navbar />
 
     {children}
 

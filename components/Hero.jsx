@@ -1,7 +1,6 @@
 import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Parallax } from 'react-scroll-parallax';
-import Navbar from './Navbar';
 
 const Hero = () => (
   <Parallax
@@ -12,59 +11,90 @@ const Hero = () => (
     tag="figure"
   >
     <section className="hero is-bold is-fullheight">
-      <div className="hero-head">
-        <Navbar />
-      </div>
-      <div className="bird-container bird-container--one">
-        <div className="bird  bird--one" />
-      </div>
-      <div className="bird-container bird-container--two">
-        <div className="bird  bird--two" />
-      </div>
-      <div className="hero-content has-text-centered">
-        <Parallax
-          className="custom-class"
-          offsetYMax={30}
-          offsetYMin={-30}
-          slowerScrollRate={false}
-          tag="figure"
-        >
-          <Fade delay={800}>
-            <a className="image is-128x128" style={{ margin: '0 auto' }} href="!">
-              <div className="myself" />
-            </a>
-          </Fade>
-        </Parallax>
-        <Parallax
-          className="custom-class"
-          offsetYMax={20}
-          offsetYMin={-20}
-          slowerScrollRate={false}
-          tag="figure"
-        >
-          <Fade delay={1000}>
-            <h1 className="title box-effect is-size-1 has-text-weight-bold has-text-white">
-              Ivan Shyrai
-            </h1>
-          </Fade>
-          <Fade delay={1400}>
-            <h2 className="subtitle has-text-white">
-              Java Software Developer
-            </h2>
-          </Fade>
-        </Parallax>
-      </div>
+      <div className="hero-cover" />
+      <Parallax
+        className="hero-parallax"
+        offsetYMax={10}
+        offsetYMin={-10}
+        tag="figure"
+      >
+        <div className="hero-inner">
+
+          <div className="bird-container bird-container--one">
+            <div className="bird  bird--one" />
+          </div>
+          <div className="bird-container bird-container--two">
+            <div className="bird  bird--two" />
+          </div>
+          <div className="hero-content has-text-centered">
+            <Parallax
+              className="custom-class"
+              offsetYMax={30}
+              offsetYMin={-30}
+              slowerScrollRate={false}
+              tag="figure"
+            >
+              <Fade delay={800}>
+                <a className="image is-128x128" style={{ margin: '0 auto' }} href="!">
+                  <div className="myself" />
+                </a>
+              </Fade>
+            </Parallax>
+            <Parallax
+              className="custom-class"
+              offsetYMax={20}
+              offsetYMin={-20}
+              slowerScrollRate={false}
+              tag="figure"
+            >
+              <Fade delay={1000}>
+                <h1 className="title box-effect is-size-1 has-text-weight-bold has-text-white">
+                  Ivan Shyrai
+              </h1>
+              </Fade>
+              <Fade delay={1400}>
+                <h2 className="subtitle has-text-white">
+                  Java Software Developer
+              </h2>
+              </Fade>
+            </Parallax>
+          </div>
+        </div>
+      </Parallax>
     </section>
     <style jsx>
       {`
         .hero-parallax {
-          display: block !important;
+          display: inline-block !important;
         }
         .hero {
           background: url("../static/barcelona-1.jpg") center bottom;
           background-size: cover;
           display: block !important;
           overflow: hidden;
+          background-repeat: no-repeat;
+        }
+        .hero-cover {
+          position: absolute;
+          top:0;
+          left: 0;
+          right: 0;
+          bottom:0;
+          background: #0a0a0a;
+          opacity: .75;
+        }
+        .hero-inner {
+          background: url("../static/barcelona-2.jpg") center bottom;
+          background-repeat: no-repeat;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 65px;
+          background-size: cover;
+          height: 100vh;
+          width: 92vw;
+          border-left: 1px solid #0a0a0a;
+          border-top: 1px solid #0a0a0a;
+          border-right: 1px solid #0a0a0a;
         }
         .hero-content {
           position:absolute;
