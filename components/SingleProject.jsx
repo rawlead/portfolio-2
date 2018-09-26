@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Link, RichText, Date } from 'prismic-reactjs';
+import { ScaleLoader } from 'react-spinners';
+import { Link, RichText } from 'prismic-reactjs';
 import { Parallax } from 'react-scroll-parallax';
 import Fade from 'react-reveal/Fade';
 import SlideshowGallery from './SlideshowGallery';
@@ -20,74 +21,101 @@ class SingleProject extends React.Component {
   render() {
     const { content } = this.props;
     const project = content.data;
+    let gradientBackground = {};
+
+    // BACKGROUND COLOR OF PROJECT WRAPPER
+    if (project) {
+      gradientBackground = {
+        backgroundColor: `${project.back_grad_color_2}`,
+        background: `linear-gradient(to right, ${project.back_grad_color_1}, ${project.back_grad_color_2})`,
+      };
+    }
 
     return (
       <React.Fragment>
-        {/* // PROJECT WRAPPER */}
-        {project ? (
-          <div className="container-wrapper" style={{ backgroundColor: project.background_color }}>
-            <div className="container sticky-container has-background-white">
-
-
-              {/* GITHUB LINK */}
-              <a className="octocat-container image" target="_blank" rel="noopener noreferrer" href={Link.url(project.project_url)}>
-                <div className="octocat" />
-              </a>
-
-              <div className="columns is-variable is-8">
-                {/* GALLERY COLUMN */}
-                <div className="column is-three-fifths">
-                  <div className="sticky-item">
-                    <Parallax
-                      className="custom-class"
-                      offsetXMax={80}
-                      offsetXMin={0}
-                      tag="figure"
-                    >
-                      {/* PROJECT TITLE */}
-                      <span className="content">{RichText.render(project.title)}</span>
-                    </Parallax>
-
-                    {/* GALLLERY COMPONENT */}
-                    <SlideshowGallery
-                      images={[
-                        project.project_img_1.url,
-                        project.project_img_2.url,
-                        project.project_img_3.url,
-                        project.project_img_4.url,
-                        project.project_img_5.url,
-                        project.project_img_6.url,
-                      ]}
-                    />
+        {!project
+          ? (
+            /* SPINNER IF PROJECT IS LOADING */
+            <div className="spinner-container has-text-centered">
+              <ScaleLoader
+                className="spinner"
+                sizeUnit="px"
+                size={120}
+                color="#4a4a4a"
+              />
+            </div>
+          ) : (
+            <div className="container-wrapper" style={gradientBackground}>
+              <div className="container sticky-container has-background-white">
+                {/* GITHUB LINK */}
+                <a
+                  className="octocat-container image"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={Link.url(project.project_url)}
+                >
+                  <div className="octocat" />
+                </a>
+                <div className="columns is-variable is-8">
+                  {/* GALLERY COLUMN */}
+                  <div className="column is-three-fifths">
+                    <div className="sticky-item">
+                      <Parallax
+                        className="custom-class"
+                        offsetXMax={80}
+                        offsetXMin={0}
+                        tag="figure"
+                      >
+                        {/* PROJECT TITLE */}
+                        <span className="content" style={{ color: `'${project.title_color}'` }}>{RichText.render(project.title)}</span>
+                      </Parallax>
+                      {/* GALLLERY COMPONENT */}
+                      <SlideshowGallery
+                        images={[
+                          project.project_img_1.url,
+                          project.project_img_2.url,
+                          project.project_img_3.url,
+                          project.project_img_4.url,
+                          project.project_img_5.url,
+                          project.project_img_6.url,
+                        ]}
+                      />
+                    </div>
+                  </div>
+                  {/* DESCRIPTION COLUMN */}
+                  <div className="column is-two-fifths content">
+                    <Fade bottom delay={500}>
+                      {/* PRISMIC CMS */}
+                      {RichText.render(project.description_overall)}
+                      {/* DESCRIPTION COLLAPSE CONTAINER */}
+                      <div className="content-collapse">
+                        {/* PRISMIC CMS */}
+                        {RichText.render(project.description_collapse)}
+                      </div>
+                      <input
+                        className="button is-outlined has-text-weight-bold is-black"
+                        type="button"
+                        onClick={this.openCollapse.bind(this)}
+                        value="More..."
+                      />
+                    </Fade>
                   </div>
                 </div>
-                {/* DESCRIPTION COLUMN */}
-                <div className="column is-two-fifths content">
-                  <Fade bottom delay={500}>
-
-                    {RichText.render(project.description_overall)}
-
-                    {/* DESCRIPTION COLLAPSE CONTAINER */}
-                    <div className="content-collapse">
-                      {RichText.render(project.description_collapse)}
-                    </div>
-                    <input
-                      className="button is-outlined has-text-weight-bold is-black"
-                      type="button"
-                      onClick={this.openCollapse.bind(this)}
-                      value="More..."
-                    />
-                  </Fade>
-                </div>
               </div>
-
             </div>
-          </div>
-        )
-          : <h1>Poroject contentą</h1>
+          )
         }
         <style jsx>
           {`
+          .spinner-container {
+            margin: 8rem 0;
+          }
+          .spinner {
+            display: block;
+            margin: 0 auto;
+            border-color: red;
+            text-align: center;
+          }
           .sticky-container {
               display: flex;
               justify-content: center;
@@ -104,8 +132,6 @@ class SingleProject extends React.Component {
               -webkit-transition: max-height 300ms ease;
               transition: max-height 300ms ease;
             }
-           
-           
             .container-wrapper {
               padding-top: 9rem;
               margin-bottom: -3rem;
@@ -148,9 +174,7 @@ class SingleProject extends React.Component {
           `}
         </style>
       </React.Fragment>
-
     );
   }
 }
-
 export default SingleProject;

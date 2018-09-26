@@ -1,7 +1,4 @@
 import React from 'react';
-// import { Parallax } from 'react-scroll-parallax';
-// import Fade from 'react-reveal/Fade';
-// import SlideshowGallery from './SlideshowGallery';
 import { getProjectsAPI } from '../api';
 import SingleProject from './SingleProject';
 
@@ -18,12 +15,10 @@ class Projects extends React.Component {
 
   async fetchProjects() {
     // Call the API and request 5 documnets
-    console.log("FETCHING PROJECTS")
     const response = await getProjectsAPI({ pageSize: 5 });
     this.setState({
       projects: response.results,
     });
-    console.log("AFTER FETCHING PROJECTS")
   }
 
   render() {
@@ -39,31 +34,16 @@ class Projects extends React.Component {
 
         <style jsx>
           {`
-            .wrapper-project2 {
-              background: -webkit-gradient(linear, left top, right top, from(#e67e22), to(#e74c3c));
-              background: -webkit-linear-gradient(left, #e67e22, #e74c3c);
-              background: -o-linear-gradient(left, #e67e22, #e74c3c);
-              background: linear-gradient(to right, #e67e22, #e74c3c);
-            }
-            .wrapper-project3 {
-              background: #232526;  /* fallback for old browsers */
-              background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
-              background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            }
             .sticky-title {
               margin-top: 3rem;
               margin-bottom: -3rem;
-            }
-            
-            
+            }  
         `}
         </style>
       </React.Fragment>
     );
   }
 }
-
-
 export default Projects;
 
 // openCollapse(e) {
