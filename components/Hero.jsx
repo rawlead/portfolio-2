@@ -59,7 +59,6 @@ const Hero = () => (
       {`
         .hero-parallax {
           display: block !important;
-
         }
         .hero {
           background: url("../static/barcelona-1.jpg") center bottom;
@@ -93,7 +92,6 @@ const Hero = () => (
           transform: rotate(-360deg);
           cursor: pointer;
         }
-        
         .bird {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg');
           background-size: auto 100%;
@@ -131,7 +129,6 @@ const Hero = () => (
           -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
         }
-
         .bird-container--one {
           -webkit-animation-name: fly-right-one;
           -webkit-animation-duration: 15s;

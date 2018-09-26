@@ -24,7 +24,7 @@ const Footer = () => (
         <div className="column has-text-centered">
           <p className="has-text-centered">
             This site is made with React, Next and Bulma by
-            <span className="has-text-black has-text-weight-bold"> IVAN SHYRAI</span>
+            <span className="has-text-weight-bold"> IVAN SHYRAI</span>
           </p>
           <p>
             The source code is available on
@@ -35,7 +35,6 @@ const Footer = () => (
           <p>2018</p>
         </div>
       </div>
-
 
       <div className="columns">
         <div className="column">
@@ -57,11 +56,9 @@ const Footer = () => (
           </a>
         </div>
       </div>
-
     </div>
     <style jsx>
       {`
-
         .image {
           transition: all .1s ease-in-out;        
           margin: 0 auto;
@@ -88,18 +85,15 @@ const Footer = () => (
           margin: 0 1rem;
         }
         .social-item__anchor {
-          color: #0a0a0a;
+          color: #4a4a4a;
           font-size: 2rem;
           transition: color .1s ease-in-out;        
-
         }
         .social-item__anchor:hover {
           color: #aaa;
         }
-
       `}
     </style>
   </footer>
 );
-
 export default Footer;

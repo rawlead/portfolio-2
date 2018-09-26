@@ -29,8 +29,6 @@ const Navbar = () => (
       {`
       .navbar {
         display: block;
-        left: auto;
-        right: auto;
         text-align:center;
         transition: all .3s ease-in-out;        
         background-color: #0a0a0a;
