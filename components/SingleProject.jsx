@@ -22,12 +22,16 @@ class SingleProject extends React.Component {
     const { content } = this.props;
     const project = content.data;
     let gradientBackground = {};
+    let titleColor = {};
 
-    // BACKGROUND COLOR OF PROJECT WRAPPER
+    // COLORS
     if (project) {
       gradientBackground = {
         backgroundColor: `${project.back_grad_color_2}`,
         background: `linear-gradient(to right, ${project.back_grad_color_1}, ${project.back_grad_color_2})`,
+      };
+      titleColor = {
+        color: `${project.title_color}`,
       };
     }
 
@@ -67,7 +71,7 @@ class SingleProject extends React.Component {
                         tag="figure"
                       >
                         {/* PROJECT TITLE */}
-                        <span className="content" style={{ color: `'${project.title_color}'` }}>{RichText.render(project.title)}</span>
+                        <h4 className=" is-size-4" style={titleColor}>{project.title[0].text}</h4>
                       </Parallax>
                       {/* GALLLERY COMPONENT */}
                       <SlideshowGallery

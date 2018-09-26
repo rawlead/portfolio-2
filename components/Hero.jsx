@@ -122,8 +122,8 @@ const Hero = () => (
           top: 20%;
           left: -10%;
           will-change: transform;
-          transform: scale(0) translateX(-10vw);
           -webkit-transform: scale(0) translateX(-10vw);
+          transform: scale(0) translateX(-10vw);
           -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
           -webkit-animation-iteration-count: infinite;
@@ -131,18 +131,18 @@ const Hero = () => (
         }
         .bird-container--one {
           -webkit-animation-name: fly-right-one;
-          -webkit-animation-duration: 15s;
-          -webkit-animation-delay: 0;
           animation-name: fly-right-one;
+          -webkit-animation-duration: 15s;
           animation-duration: 15s;
+          -webkit-animation-delay: 0;
           animation-delay: 0;
         }
         .bird-container--two {
           -webkit-animation-name: fly-right-two;
-          -webkit-animation-duration: 17s;
-          -webkit-animation-delay: .5s;
           animation-name: fly-right-two;
+          -webkit-animation-duration: 17s;
           animation-duration: 17s;
+          -webkit-animation-delay: .5s;
           animation-delay: .5s;
         }
         @-webkit-keyframes fly-cycle {
@@ -165,6 +165,7 @@ const Hero = () => (
           
           10% {
             -webkit-transform: translateY(2vh) translateX(10vw) scale(0.4);
+
             transform: translateY(2vh) translateX(10vw) scale(0.4);
           }
           
