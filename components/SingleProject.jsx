@@ -17,6 +17,38 @@ class SingleProject extends React.Component {
     }
   }
 
+  addJSONLD(project, info) {
+    this.funcName = 'addJSONLD';
+    return {
+      __html: `{
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+      },
+      "headline": "${project.og_title[0].text}",
+      "image": [
+        "${project.og_image.url}"
+      ],
+      "datePublished": "${info.first_publication_date}",
+      "dateModified": "${info.first_publication_date}",
+      "author": {
+        "@type": "Person",
+        "name": "Ivan Shyrai"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Ivan Shyrai",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://prismic-io.s3.amazonaws.com/is-portfolio%2F26e26159-2cb3-49eb-8bdf-c468df8622c9_ivan_portfolio.jpg"
+        }
+      },
+      "description": "${project.og_description[0].text}"
+    }`,
+    };
+  }
+
   render() {
     const { content } = this.props;
     const project = content.data;
@@ -106,6 +138,10 @@ class SingleProject extends React.Component {
                   </div>
                 </div>
               </div>
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={this.addJSONLD(project, content)}
+              />
             </div>
           )
         }
