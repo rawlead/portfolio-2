@@ -91,18 +91,19 @@ class SingleProject extends React.Component {
                     <Fade bottom delay={500}>
                       {/* PRISMIC CMS */}
                       {RichText.render(project.description_overall)}
-                      {/* DESCRIPTION COLLAPSE CONTAINER */}
-                      <div className="content-collapse">
-                        {/* PRISMIC CMS */}
-                        {RichText.render(project.description_collapse)}
-                      </div>
-                      <input
-                        className="button is-outlined has-text-weight-bold is-black"
-                        type="button"
-                        onClick={this.openCollapse.bind(this)}
-                        value="More..."
-                      />
                     </Fade>
+
+                    {/* DESCRIPTION COLLAPSE CONTAINER */}
+                    <div className="content-collapse">
+                      {/* PRISMIC CMS */}
+                      {RichText.render(project.description_collapse)}
+                    </div>
+                    <input
+                      className="button is-outlined has-text-weight-bold is-black"
+                      type="button"
+                      onClick={this.openCollapse.bind(this)}
+                      value="More..."
+                    />
                   </div>
                 </div>
               </div>
@@ -120,6 +121,9 @@ class SingleProject extends React.Component {
             border-color: red;
             text-align: center;
           }
+          .content {
+            overflow: hidden;
+          }
           .sticky-container {
               display: flex;
               justify-content: center;
@@ -128,6 +132,7 @@ class SingleProject extends React.Component {
               border: 1px solid hsl(0, 0%, 86%);
               padding: 2rem 2rem 4rem 2rem;
               max-width: 1152px;
+              border-radius: 5px;
             }
             .content-collapse {
               margin-bottom:1rem;

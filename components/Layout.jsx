@@ -20,13 +20,13 @@ const Layout = ({ children }) => (
         }
         html,
         body {
-            overflow: hidden;
+
         } 
         * {
           font-family: 'Oswald', sans-serif !important;
         }
         .button {
-          border-radius: 0 !important;
+          border-radius: 5px !important;
         }
         .section-title {
           text-align: center;
@@ -39,10 +39,12 @@ const Layout = ({ children }) => (
         }
         .section-title__dark {
           border-bottom: 3px solid #4a4a4a;
+          border-radius: 5px;
         }
         .section-title__light {
-          border-bottom: 3px solid #f5f5f5;
-          color: #f5f5f5;
+          border-bottom: 3px solid hsl(0, 0%, 86%);
+          border-radius: 5px;
+          color: hsl(0, 0%, 86%);
         }
         /*effect-box*/
         .box-effect:after,

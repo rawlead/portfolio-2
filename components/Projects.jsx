@@ -27,7 +27,7 @@ class Projects extends React.Component {
       <SingleProject key={project.uid} content={project} />
     ));
     return (
-      <React.Fragment>
+      <div className="projects-section">
         <h1 className="is-size-3 sticky-title section-title section-title__dark">Projects</h1>
 
         {projectsView}
@@ -40,7 +40,7 @@ class Projects extends React.Component {
             }  
         `}
         </style>
-      </React.Fragment>
+      </div>
     );
   }
 }

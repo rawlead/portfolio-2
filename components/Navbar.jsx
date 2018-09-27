@@ -3,11 +3,9 @@ import Social from './Social';
 
 const Navbar = () => (
   <React.Fragment>
-    <nav className="navbar-social bounce-top has-text-centered">
-      <div className="container">
-        <Social linkStyle={{ color: '#f5f5f5' }} />
-      </div>
-    </nav>
+    <section className="navbar-social bounce-top has-text-centered">
+      <Social linkStyle={{ color: '#f5f5f5', fontSize: '1.4rem' }} />
+    </section>
     <style jsx>
       {`
       .navbar-social {
@@ -19,6 +17,7 @@ const Navbar = () => (
         display: block;
         transition: all .3s ease-in-out;    
         padding: .4rem 0;  
+        overflow: hidden;
       }
 
       .bounce-top {

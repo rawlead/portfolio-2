@@ -13,13 +13,21 @@ const SkillItems = ({ logos, headings }) => {
               <img src={logos[i]} alt={`${headings[i]}-logo`} />
             </figure>
           </div>
-          <p className="heading has-text-weight-bold has-text-white-ter" style={{ fontSize: '.8rem' }}>{headings[i]}</p>
+          <p className="heading has-text-weight-bold has-text-grey-light" style={{ fontSize: '1.25rem', textTransform: 'none' }}>{headings[i]}</p>
         </div>
       </div>,
     );
   }
   return (
-    <nav className="level is-mobile" style={{ padding: '.6rem 0 0 0', borderTop: '1px solid hsl(0, 0%, 30%)', borderBottom: '1px solid hsl(0, 0%, 30%)' }}>
+    <nav
+      className="level is-mobile"
+      style={{
+        padding: '.6rem 0 0 0',
+        borderTop: '1px solid hsl(0, 0%, 30%)',
+        borderBottom: '1px solid hsl(0, 0%, 30%)',
+        borderRadius: '5px',
+      }}
+    >
       {items}
     </nav>
   );
@@ -39,11 +47,11 @@ const Info = () => (
             <h1 className="is-size-3 section-title section-title__light">About</h1>
             <div className="columns">
               <div className="column content ">
-                <h6 className="has-text-white-ter">
+                <h6 className="has-text-grey-light is-size-5">
                   Oracle Certified Java Developer specialised in
                    front-end and back-end development.
                 </h6>
-                <h6 className="has-text-white-ter">Available for hire and open to any ideas of cooperation.</h6>
+                <h6 className="has-text-grey-light is-size-5">Available for hire and open to any ideas of cooperation.</h6>
               </div>
             </div>
           </div>
@@ -54,7 +62,7 @@ const Info = () => (
 
         {/* row first */}
         <div className="columns is-marginless">
-          <h1 className="column is-size-4 has-text-weight-bold has-text-white-ter">
+          <h1 className="column is-size-4 has-text-weight-bold has-text-grey-light">
             HTML / CSS
           </h1>
         </div>
@@ -62,9 +70,9 @@ const Info = () => (
           <div className="column is-marginless">
             <SkillItems
               headings={[
-                'jsx',
-                'ui design',
-                'materialize',
+                'JSX',
+                'UI Design',
+                'Materialize',
               ]}
               logos={[
                 '../static/logos/react.svg',
@@ -76,9 +84,9 @@ const Info = () => (
           <div className="column is-marginless">
             <SkillItems
               headings={[
-                'bootstrap',
-                'bulma',
-                'sass',
+                'Bootstrap',
+                'Bulma',
+                'Sass',
               ]}
               logos={[
                 '../static/logos/bootstrap.svg',
@@ -92,15 +100,15 @@ const Info = () => (
         {/* row second */}
         <div className="columns">
           <div className="column">
-            <h1 className="skills-col-title is-size-5 has-text-white-ter">
+            <h1 className="skills-col-title is-size-5 has-text-grey-light">
               BACK-END
             </h1>
             <SkillItems
               headings={[
-                'java',
-                'spring',
-                'mysql',
-                'hibernate',
+                'Java',
+                'Spring',
+                'MySQL',
+                'Hibernate',
               ]}
               logos={[
                 '../static/logos/java.svg',
@@ -112,15 +120,15 @@ const Info = () => (
           </div>
 
           <div className="column">
-            <h1 className="skills-col-title is-size-5 has-text-white-ter">
+            <h1 className="skills-col-title is-size-5 has-text-grey-light">
               JAVASCRIPT
             </h1>
             <SkillItems
               headings={[
-                'react',
-                'next',
-                'vue',
-                'jquery',
+                'React',
+                'Next',
+                'Vue',
+                'jQuery',
               ]}
               logos={[
                 '../static/logos/react.svg',
@@ -134,7 +142,7 @@ const Info = () => (
 
         {/* row third */}
         <div className="columns is-marginless">
-          <h1 className="column is-size-5 has-text-weight-bold has-text-white-ter">
+          <h1 className="column is-size-5 has-text-weight-bold has-text-grey-light">
             OTHER
           </h1>
         </div>
@@ -143,9 +151,9 @@ const Info = () => (
           <div className="column is-marginless">
             <SkillItems
               headings={[
-                'git',
-                'aws',
-                'heroku',
+                'GIT',
+                'AWS',
+                'Heroku',
               ]}
               logos={[
                 '../static/logos/github.png',
@@ -157,9 +165,9 @@ const Info = () => (
           <div className="column is-marginless">
             <SkillItems
               headings={[
-                'intellij',
-                'photoshop',
-                'illustrator',
+                'IntelliJ',
+                'Photoshop',
+                'Illustrator',
               ]}
               logos={[
                 '../static/logos/intellij.svg',
@@ -174,7 +182,7 @@ const Info = () => (
     <style jsx>
       {`
         .section {
-          display: block !important;
+          overflow: hidden;
         }
         .main-content {
           padding: 4rem;

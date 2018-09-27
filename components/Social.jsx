@@ -1,57 +1,59 @@
 import * as React from 'react';
 
 const Social = ({ linkStyle }) => (
-  <div className="columns">
-    <div className="column has-text-centered">
-      <div className="social-item">
-        <a
-          href="https://www.facebook.com/ivanshyrai"
-          className="social-item__anchor"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={linkStyle}
-        >
-          <i className="fab fa-facebook fa-lg" />
-        </a>
-      </div>
+  <div className="container">
+    <div className="columns">
+      <div className="column has-text-centered">
+        <div className="social-item">
+          <a
+            href="https://www.facebook.com/ivanshyrai"
+            className="social-item__anchor"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={linkStyle}
+          >
+            <i className="fab fa-facebook fa-lg" />
+          </a>
+        </div>
 
-      <div className="social-item">
-        <a
-          href="mailto:ivan.shyrai@yahoo.com"
-          className="social-item__anchor"
-          target="_top"
-          style={linkStyle}
-        >
-          <i className="fas fa-envelope fa-lg" />
-        </a>
-      </div>
+        <div className="social-item">
+          <a
+            href="mailto:ivan.shyrai@yahoo.com"
+            className="social-item__anchor"
+            target="_top"
+            style={linkStyle}
+          >
+            <i className="fas fa-envelope fa-lg" />
+          </a>
+        </div>
 
-      <div className="social-item">
-        <a
-          href="https://www.linkedin.com/in/ivan-shyrai/"
-          className="social-item__anchor"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={linkStyle}
-        >
-          <i className="fab fa-linkedin fa-lg" />
-        </a>
-      </div>
+        <div className="social-item">
+          <a
+            href="https://www.linkedin.com/in/ivan-shyrai/"
+            className="social-item__anchor"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={linkStyle}
+          >
+            <i className="fab fa-linkedin fa-lg" />
+          </a>
+        </div>
 
-      <div className="social-item">
-        <a
-          href="https://github.com/rawlead"
-          className="social-item__anchor"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={linkStyle}
-        >
-          <i className="fab fa-github fa-lg" />
-        </a>
+        <div className="social-item">
+          <a
+            href="https://github.com/rawlead"
+            className="social-item__anchor"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={linkStyle}
+          >
+            <i className="fab fa-github fa-lg" />
+          </a>
+        </div>
       </div>
-    </div>
-    <style jsx>
-      {`
+      <style jsx>
+        {`
+      .container {}
       .social-item {
           display: inline-block;
           margin: 0 1rem;
@@ -65,7 +67,8 @@ const Social = ({ linkStyle }) => (
           color: #aaa;
         }
       `}
-    </style>
+      </style>
+    </div>
   </div>
 );
 

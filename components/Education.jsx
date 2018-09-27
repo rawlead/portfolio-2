@@ -38,7 +38,6 @@ const Education = () => (
           margin-bottom: 4rem;
         }
         .column {
-          margin-bottom: 5rem;
         }
         .columns {
           max-width: 936px;
@@ -47,9 +46,11 @@ const Education = () => (
         }
         .wrapper {
           background-color: #fff;
+          position: relative;
           padding-top: 2rem;
           box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
           border-bottom: 1px solid hsl(0, 0%, 86%);
+          padding-bottom: 5rem;
         }
       `}
     </style>

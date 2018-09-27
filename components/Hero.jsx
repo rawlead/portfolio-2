@@ -19,7 +19,7 @@ const Hero = () => (
         tag="figure"
       >
         <div className="hero-inner">
-
+          {/* BIRDS */}
           <div className="bird-container bird-container--one">
             <div className="bird  bird--one" />
           </div>
@@ -48,14 +48,14 @@ const Hero = () => (
               tag="figure"
             >
               <Fade delay={1000}>
-                <h1 className="title box-effect is-size-1 has-text-weight-bold has-text-white">
+                <h1 className="title box-effect is-size-1 has-text-weight-bold has-text-grey-lighter">
                   Ivan Shyrai
-              </h1>
+                </h1>
               </Fade>
               <Fade delay={1400}>
-                <h2 className="subtitle has-text-white">
+                <h2 className="subtitle has-text-grey-lighter">
                   Java Software Developer
-              </h2>
+                </h2>
               </Fade>
             </Parallax>
           </div>
@@ -70,7 +70,6 @@ const Hero = () => (
         .hero {
           background: url("../static/barcelona-1.jpg") center bottom;
           background-size: cover;
-          display: block !important;
           overflow: hidden;
           background-repeat: no-repeat;
         }
@@ -88,13 +87,15 @@ const Hero = () => (
           background-repeat: no-repeat;
           margin-left: auto;
           margin-right: auto;
-          margin-top: 65px;
+          margin-top: 52px;
           background-size: cover;
           height: 100vh;
           width: 92vw;
-          border-left: 1px solid #0a0a0a;
-          border-top: 1px solid #0a0a0a;
-          border-right: 1px solid #0a0a0a;
+          border-left: 2px solid #0A0A0A;
+          border-top: 2px solid #0A0A0A;
+          border-right: 2px solid #0A0A0A;
+          overflow: hidden;
+          border-radius: 5px;
         }
         .hero-content {
           position:absolute;
@@ -111,7 +112,7 @@ const Hero = () => (
           will-change: transform;
           width: 128px;
           height: 128px;
-          border-radius: 50%;
+          border-radius: 5px;
         }
         .myself:hover {
           background: url('../static/me2.jpg');
@@ -121,12 +122,14 @@ const Hero = () => (
           -webkit-transform: rotate(-360deg);
           transform: rotate(-360deg);
           cursor: pointer;
+          border-radius: 50%;
         }
         .bird {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg');
           background-size: auto 100%;
           width: 88px;
           height: 125px;
+          z-index: -1;
           will-change: background-position;
           -webkit-animation-name: fly-cycle;
           animation-name: fly-cycle;
