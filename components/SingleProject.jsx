@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { ScaleLoader } from 'react-spinners';
 import { Link, RichText } from 'prismic-reactjs';
-import { Parallax } from 'react-scroll-parallax';
 import Fade from 'react-reveal/Fade';
 import SlideshowGallery from './SlideshowGallery';
 
@@ -60,19 +59,19 @@ class SingleProject extends React.Component {
                 >
                   <div className="octocat" />
                 </a>
-                <div className="columns is-variable is-8">
+                <div className="columns">
                   {/* GALLERY COLUMN */}
                   <div className="column is-three-fifths">
                     <div className="sticky-item">
-                      <Parallax
+                      {/* <Parallax
                         className="custom-class"
                         offsetXMax={80}
                         offsetXMin={0}
                         tag="figure"
-                      >
-                        {/* PROJECT TITLE */}
-                        <h4 className=" is-size-4" style={titleColor}>{project.title[0].text}</h4>
-                      </Parallax>
+                      > */}
+                      {/* PROJECT TITLE */}
+                      <h4 className=" is-size-4 has-text-right" style={titleColor}>{project.title[0].text}</h4>
+                      {/* </Parallax> */}
                       {/* GALLLERY COMPONENT */}
                       <SlideshowGallery
                         images={[
@@ -175,10 +174,16 @@ class SingleProject extends React.Component {
               border-radius: 0%;
               cursor: pointer;
             }
+            @media screen and (min-width: 770px) {
+              .content {
+                padding-left: 2rem;
+              }
+            }
             @media screen and (max-width: 769px) {
                 .sticky-container {
                     padding: 2rem 1rem 3rem 1rem;
                 }
+               
             }
           `}
         </style>

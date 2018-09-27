@@ -122,7 +122,6 @@ const Hero = () => (
           -webkit-transform: rotate(-360deg);
           transform: rotate(-360deg);
           cursor: pointer;
-          border-radius: 50%;
         }
         .bird {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg');

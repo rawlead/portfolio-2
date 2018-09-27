@@ -51,6 +51,10 @@ class SlideshowGallery extends React.Component {
               .nonactive {
                   display: none;
               }
+              .image {
+              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+
+              }
               .image img {
                 border-radius: 5px;
               }
@@ -65,6 +69,7 @@ class SlideshowGallery extends React.Component {
                   right: -30px;
                   transform: translate(-50%, -50%);
                   border-radius: 5px;
+                box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
               }
               .swing-out-top-bck {
                   -webkit-animation: swing-out-top-bck 0.45s cubic-bezier(0.600, -0.280, 0.735, 0.045) reverse both;
@@ -144,6 +149,7 @@ class SlideshowGallery extends React.Component {
               }
               .image img {
                 border-radius: 5px;
+                box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
               }
               .column {
                   padding: 0.25rem;
@@ -223,7 +229,7 @@ class SlideshowGallery extends React.Component {
               cursor: pointer;
               color: white;
               font-weight: bold;
-              opacity: .7;
+              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
             }
             .prev {
               margin-right: .7rem;
