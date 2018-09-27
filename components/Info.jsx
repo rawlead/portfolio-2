@@ -6,7 +6,7 @@ const SkillItems = ({ logos, headings }) => {
   const items = [];
   for (let i = 0; i < logos.length; i += 1) {
     items.push(
-      <div key={i} className="level-item has-text-centered">
+      <div key={i} className="level-item has-text-centered" style={{ maxWidth: '25%' }}>
         <div>
           <div className="title" style={{ marginBottom: 0 }}>
             <figure className="image is-32x32 " style={{ margin: 'auto auto 8px auto' }}>
@@ -25,7 +25,8 @@ const SkillItems = ({ logos, headings }) => {
         padding: '.6rem 0 0 0',
         borderTop: '1px solid hsl(0, 0%, 30%)',
         borderBottom: '1px solid hsl(0, 0%, 30%)',
-        borderRadius: '5px',
+        borderBottomLeftRadius: '5px',
+        borderBottomRightRadius: '5px',
       }}
     >
       {items}

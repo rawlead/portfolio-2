@@ -64,7 +64,7 @@ const Social = ({ linkStyle }) => (
           transition: color .1s ease-in-out;        
         }
         .social-item__anchor:hover {
-          color: #aaa;
+          filter:brightness(200%);;
         }
       `}
       </style>
