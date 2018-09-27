@@ -50,7 +50,7 @@ const Education = () => (
           padding-top: 2rem;
           box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
           border-bottom: 1px solid hsl(0, 0%, 86%);
-          padding-bottom: 5rem;
+          padding-bottom: 5rem !important;
         }
       `}
     </style>
