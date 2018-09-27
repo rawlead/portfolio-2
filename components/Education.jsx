@@ -3,7 +3,7 @@ import Fade from 'react-reveal/Fade';
 
 const Education = () => (
 
-  <section className="wrapper">
+  <section className="wrapper" style={{ paddingBottom: '5rem' }}>
     <Fade delay={200} cascade>
 
       <h1 className="is-size-3 section-title section-title__dark">Education</h1>
@@ -50,7 +50,6 @@ const Education = () => (
           padding-top: 2rem;
           box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
           border-bottom: 1px solid hsl(0, 0%, 86%);
-          padding-bottom: 5rem !important;
         }
       `}
     </style>

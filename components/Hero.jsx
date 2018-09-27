@@ -35,7 +35,7 @@ const Hero = () => (
               tag="figure"
             >
               <Fade delay={800}>
-                <a className="image is-128x128" style={{ margin: '0 auto' }} href="!">
+                <a className="image is-128x128" style={{ margin: '0 auto' }} href="#info">
                   <div className="myself" />
                 </a>
               </Fade>

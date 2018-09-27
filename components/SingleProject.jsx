@@ -83,14 +83,18 @@ class SingleProject extends React.Component {
             <div className="container-wrapper" style={gradientBackground}>
               <div className="container sticky-container has-background-white">
                 {/* GITHUB LINK */}
-                <a
-                  className="octocat-container image"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href={Link.url(project.project_url)}
-                >
-                  <div className="octocat" />
-                </a>
+                {Link.url(project.project_url) && (
+                  <a
+                    className="octocat-container image"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={Link.url(project.project_url)}
+                  >
+                    <div className="octocat" />
+                  </a>
+                )
+
+                }
                 <div className="columns">
                   {/* GALLERY COLUMN */}
                   <div className="column is-three-fifths">

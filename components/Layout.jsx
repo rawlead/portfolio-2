@@ -24,6 +24,7 @@ const Layout = ({ children }) => (
         } 
         * {
           font-family: 'Oswald', sans-serif !important;
+          scroll-behavior: smooth;
         }
         .button {
           border-radius: 5px !important;

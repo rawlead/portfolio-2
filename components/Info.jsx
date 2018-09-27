@@ -35,7 +35,7 @@ const SkillItems = ({ logos, headings }) => {
 };
 
 const Info = () => (
-  <section className="section has-background-black">
+  <section className="section has-background-black" id="info">
     <div className="main-content has-text-centered">
       <Fade delay={200} cascade>
         {/* row main description */}
