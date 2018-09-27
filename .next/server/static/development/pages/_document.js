@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -147,7 +147,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_jsx_server__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_server__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _lib_gtag__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../lib/gtag */ "./lib/gtag.js");
 
-var _jsxFileName = "/Users/ivan/Desktop/portfolio/pages/_document.jsx";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -208,96 +207,25 @@ function (_Document) {
     value: function render() {
       var isProduction = this.props.isProduction;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("html", {
-        lang: "en",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 40
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["Head"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 41
-        },
-        __self: this
-      }, isProduction && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 44
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("script", {
+        lang: "en"
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["Head"], null, isProduction && react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("script", {
         async: true,
-        src: "https://www.googletagmanager.com/gtag/js?id=".concat(_lib_gtag__WEBPACK_IMPORTED_MODULE_4__["GA_TRACKING_ID"]),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 45
-        },
-        __self: this
+        src: "https://www.googletagmanager.com/gtag/js?id=".concat(_lib_gtag__WEBPACK_IMPORTED_MODULE_4__["GA_TRACKING_ID"])
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("script", {
-        dangerouslySetInnerHTML: this.setGoogleTags(),
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 50
-        },
-        __self: this
+        dangerouslySetInnerHTML: this.setGoogleTags()
       })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("meta", {
         name: "viewport",
-        content: "width=device-width, initial-scale=1",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 54
-        },
-        __self: this
+        content: "width=device-width, initial-scale=1"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
         rel: "stylesheet",
-        href: "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 55
-        },
-        __self: this
+        href: "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("link", {
         href: "https://fonts.googleapis.com/css?family=Oswald",
-        rel: "stylesheet",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 56
-        },
-        __self: this
+        rel: "stylesheet"
       }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("script", {
         defer: true,
-        src: "https://use.fontawesome.com/releases/v5.1.0/js/all.js",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 57
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("title", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 58
-        },
-        __self: this
-      }, "Ivan Shyrai")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("body", {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 60
-        },
-        __self: this
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["Main"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 61
-        },
-        __self: this
-      }), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["NextScript"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 62
-        },
-        __self: this
-      })));
+        src: "https://use.fontawesome.com/releases/v5.1.0/js/all.js"
+      })), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("body", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["Main"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_document__WEBPACK_IMPORTED_MODULE_2__["NextScript"], null)));
     }
   }], [{
     key: "getInitialProps",
@@ -346,7 +274,7 @@ function (_Document) {
 
 /***/ }),
 
-/***/ 0:
+/***/ 1:
 /*!***********************************!*\
   !*** multi ./pages/_document.jsx ***!
   \***********************************/

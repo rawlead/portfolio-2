@@ -55,7 +55,6 @@ export default class extends Document {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
           <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" />
           <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" />
-          <title>Ivan Shyrai</title>
         </Head>
         <body>
           <Main />

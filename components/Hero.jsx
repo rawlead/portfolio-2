@@ -54,7 +54,7 @@ const Hero = () => (
               </Fade>
               <Fade delay={1400}>
                 <h2 className="subtitle has-text-grey-lighter">
-                  Java Software Developer
+                  Java Full Stack Developer
                 </h2>
               </Fade>
             </Parallax>
