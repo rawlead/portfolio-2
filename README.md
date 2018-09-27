@@ -1,18 +1,1 @@
-My portfolio website
-
-
-
-
-
-
-
-
-
-
-
-
-
-// "dev": "next",
-// "build": "next build",
-// "start": "next start",
-// "export": "npm run build && next export"
+Second iteration of my personal website.
