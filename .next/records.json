@@ -22,10 +22,10 @@
       "node_modules/babel-runtime/helpers/extends.js": 18,
       "node_modules/core-js/library/modules/_object-dp.js": 19,
       "node_modules/core-js/library/modules/_an-object.js": 20,
-      "node_modules/core-js/library/modules/_descriptors.js": 21,
-      "node_modules/core-js/library/modules/_ctx.js": 22,
-      "node_modules/@babel/runtime/regenerator/index.js": 23,
-      "node_modules/react-scroll-parallax/lib/index.js": 24,
+      "node_modules/react-scroll-parallax/lib/index.js": 21,
+      "node_modules/core-js/library/modules/_descriptors.js": 22,
+      "node_modules/core-js/library/modules/_ctx.js": 23,
+      "node_modules/@babel/runtime/regenerator/index.js": 24,
       "node_modules/core-js/library/modules/_fails.js": 25,
       "node_modules/core-js/library/modules/_hide.js": 26,
       "node_modules/@babel/runtime-corejs2/helpers/defineProperty.js": 27,
@@ -650,9 +650,9 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "static/runtime/main.js": 2,
-      "static/2_aCJVdktaqYFSMP0t~vK/pages/_app.js": 3,
-      "static/2_aCJVdktaqYFSMP0t~vK/pages/index.js": 4,
-      "static/2_aCJVdktaqYFSMP0t~vK/pages/_error.js": 5
+      "static/2TvstUUeN3dOlDBcXKZDH/pages/_app.js": 3,
+      "static/2TvstUUeN3dOlDBcXKZDH/pages/index.js": 4,
+      "static/2TvstUUeN3dOlDBcXKZDH/pages/_error.js": 5
     },
     "bySource": {},
     "usedIds": [
