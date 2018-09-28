@@ -1,27 +1,72 @@
 import React from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import { ScaleLoader } from 'react-spinners';
+
 // import Head from 'next/head';
 import Footer from './Footer';
 import Navbar from './Navbar';
 // import { initGA, logPageView } from '../utils/analytics';
 
-const Layout = ({ children }) => (
-  <ParallaxProvider>
-    <Navbar />
+class Layout extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isLoading: true };
+  }
 
-    {children}
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        isLoading: false,
+      });
+    }, 1000);
+  }
 
-    <Footer />
+  render() {
+    const { isLoading } = this.state;
+    const { children } = this.props;
+    return (
+      <ParallaxProvider>
+        {isLoading
+          ? (
+            <div className="preloader">
+              <ScaleLoader
+                className="preloader-spinner"
+                sizeUnit="px"
+                size={120}
+                color="#f2f2f2"
+              />
+            </div>
+          ) : (
+            <React.Fragment>
+              <Navbar />
 
-    <style global jsx>
-      {`
+              {children}
+
+              <Footer />
+            </React.Fragment>
+          )
+        }
+        <style global jsx>
+          {`
         body {
           background-color: #f2f2f2;
         }
-        html,
-        body {
-
-        } 
+        .preloader {
+          position: fixed;
+          background-color: #0a0a0a;
+          z-index: 999;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        }
+        .preloader-spinner {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        }
         * {
           font-family: 'Oswald', sans-serif !important;
           scroll-behavior: smooth;
@@ -80,8 +125,10 @@ const Layout = ({ children }) => (
           transform: scale(1);
         }
       `}
-    </style>
-  </ParallaxProvider>
-);
+        </style>
+      </ParallaxProvider >
+    );
+  }
+}
 
 export default Layout;

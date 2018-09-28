@@ -13,7 +13,7 @@ const SkillItems = ({ logos, headings }) => {
               <img src={logos[i]} alt={`${headings[i]}-logo`} />
             </figure>
           </div>
-          <p className="heading has-text-weight-bold has-text-grey-light" style={{ fontSize: '1.25rem', textTransform: 'none' }}>{headings[i]}</p>
+          <p className="heading has-text-weight-bold has-text-grey-light" style={{ fontSize: '1.15rem', textTransform: 'none' }}>{headings[i]}</p>
         </div>
       </div>,
     );
@@ -37,13 +37,13 @@ const SkillItems = ({ logos, headings }) => {
 const Info = () => (
   <section className="section has-background-black" id="info">
     <div className="main-content has-text-centered">
-      <Fade delay={200} cascade>
-        {/* row main description */}
-        <Parallax
-          offsetYMax={50}
-          offsetYMin={-50}
-          tag="figure"
-        >
+      {/* row main description */}
+      <Parallax
+        offsetYMax={50}
+        offsetYMin={-50}
+        tag="figure"
+      >
+        <Fade delay={200}>
           <div style={{ minHeight: '50vh' }}>
             <h1 className="is-size-3 section-title section-title__light">About</h1>
             <div className="columns">
@@ -56,7 +56,10 @@ const Info = () => (
               </div>
             </div>
           </div>
-        </Parallax>
+        </Fade>
+      </Parallax>
+      <Fade delay={200} cascade>
+
         <div className="title-row">
           <h1 className="is-size-3 has-text-weight-bold section-title section-title__light">Technical Skills</h1>
         </div>

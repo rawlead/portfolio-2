@@ -93,21 +93,15 @@ class SingleProject extends React.Component {
                     <div className="octocat" />
                   </a>
                 )
-
                 }
                 <div className="columns">
                   {/* GALLERY COLUMN */}
-                  <div className="column is-three-fifths">
+                  <div className="column">
                     <div className="sticky-item">
-                      {/* <Parallax
-                        className="custom-class"
-                        offsetXMax={80}
-                        offsetXMin={0}
-                        tag="figure"
-                      > */}
                       {/* PROJECT TITLE */}
-                      <h4 className=" is-size-4 has-text-right" style={titleColor}>{project.title[0].text}</h4>
-                      {/* </Parallax> */}
+                      <Fade delay={700}>
+                        <h4 className=" is-size-3 has-text-weight-bold has-text-right" style={titleColor}>{project.title[0].text}</h4>
+                      </Fade>
                       {/* GALLLERY COMPONENT */}
                       <SlideshowGallery
                         images={[
@@ -123,7 +117,7 @@ class SingleProject extends React.Component {
                   </div>
                   {/* DESCRIPTION COLUMN */}
                   <div className="column is-two-fifths content">
-                    <Fade bottom delay={500}>
+                    <Fade delay={500}>
                       {/* PRISMIC CMS */}
                       {RichText.render(project.description_overall)}
                     </Fade>
@@ -131,7 +125,9 @@ class SingleProject extends React.Component {
                     {/* DESCRIPTION COLLAPSE CONTAINER */}
                     <div className="content-collapse">
                       {/* PRISMIC CMS */}
-                      {RichText.render(project.description_collapse)}
+                      <Fade delay={150}>
+                        {RichText.render(project.description_collapse)}
+                      </Fade>
                     </div>
                     <input
                       className="button is-outlined has-text-weight-bold is-black"
@@ -183,6 +179,8 @@ class SingleProject extends React.Component {
             .container-wrapper {
               padding-top: 9rem;
               margin-bottom: -3rem;
+              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+
             }
             .sticky-item {
               position: -webkit-sticky;
@@ -202,8 +200,8 @@ class SingleProject extends React.Component {
               background-size: contain;
               position:relative;
               z-index: 10;
-              width:45px;
-              height:45px;
+              width:35px;
+              height:35px;
               transition: all .3s ease-in-out;
             }
             .octocat:hover {
@@ -220,10 +218,9 @@ class SingleProject extends React.Component {
               }
             }
             @media screen and (max-width: 769px) {
-                .sticky-container {
-                    padding: 2rem 1rem 3rem 1rem;
-                }
-               
+              .sticky-container {
+                  padding: 2rem 1rem 3rem 1rem;
+              }
             }
           `}
         </style>

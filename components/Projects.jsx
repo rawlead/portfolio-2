@@ -1,4 +1,5 @@
 import React from 'react';
+import Fade from 'react-reveal/Fade';
 import { getProjectsAPI } from '../api';
 import SingleProject from './SingleProject';
 
@@ -28,15 +29,17 @@ class Projects extends React.Component {
     ));
     return (
       <div className="projects-section">
-        <h1 className="is-size-3 sticky-title section-title section-title__dark">Projects</h1>
+        <Fade delay={500}>
 
+          <h1 className="is-size-3 sticky-title section-title section-title__dark">Projects</h1>
+
+        </Fade>
         {projectsView}
 
         <style jsx>
           {`
             .sticky-title {
-              margin-top: 3rem;
-              margin-bottom: -3rem;
+              margin-top: 5rem;
             }  
         `}
         </style>

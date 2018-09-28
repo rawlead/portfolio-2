@@ -69,7 +69,7 @@ class SlideshowGallery extends React.Component {
                   right: -30px;
                   transform: translate(-50%, -50%);
                   border-radius: 5px;
-                box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+                  box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
               }
               .swing-out-top-bck {
                   -webkit-animation: swing-out-top-bck 0.45s cubic-bezier(0.600, -0.280, 0.735, 0.045) reverse both;
@@ -169,20 +169,22 @@ class SlideshowGallery extends React.Component {
     return (
       <div className="gallery-container">
         {/* SLIDES */}
-        <div className="columns is-mobile" style={{ marginBottom: '1.5rem' }}>
-          <div className="column" style={{ padding: 0 }}>
-            {slides}
+        <Fade delay={200}>
+          <div className="columns is-mobile" style={{ marginBottom: '1.5rem' }}>
+            <div className="column" style={{ padding: 0 }}>
+              {slides}
+            </div>
           </div>
-        </div>
+        </Fade>
         {/* SLIDE PREVIEW ITEMS */}
-        <Fade delay={800}>
+        <Fade delay={200}>
           <div className="columns is-variable is-1 is-mobile">
             {previews}
           </div>
         </Fade>
 
         <div className="buttons-container">
-          <Fade delay={1200}>
+          <Fade delay={200}>
             {/* PREVIOUS BUTTON */}
             <button className="prev button is-black is-outlined" type="button" onClick={() => this.plusSlides(-1)}>
               <i className="fas fa-angle-left" />

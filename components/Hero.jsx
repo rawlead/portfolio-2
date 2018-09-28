@@ -34,7 +34,7 @@ const Hero = () => (
               slowerScrollRate={false}
               tag="figure"
             >
-              <Fade delay={800}>
+              <Fade delay={600}>
                 <a className="image is-128x128" style={{ margin: '0 auto' }} href="#info">
                   <div className="myself" />
                 </a>
@@ -47,12 +47,12 @@ const Hero = () => (
               slowerScrollRate={false}
               tag="figure"
             >
-              <Fade delay={1000}>
+              <Fade delay={800}>
                 <h1 className="title box-effect is-size-1 has-text-weight-bold has-text-grey-lighter">
                   Ivan Shyrai
                 </h1>
               </Fade>
-              <Fade delay={1400}>
+              <Fade delay={1000}>
                 <h2 className="subtitle has-text-grey-lighter">
                   Java Full Stack Developer
                 </h2>
