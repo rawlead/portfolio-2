@@ -15,22 +15,6 @@ const Footer = () => (
         <Social linkStyle={{ color: '#4a4a4a' }} />
 
         <div className="columns">
-          <div className="column has-text-centered">
-            <p className="has-text-centered">
-              This site is made with React, Next and Bulma by
-              <span className="has-text-weight-bold"> IVAN SHYRAI</span>
-            </p>
-            <p>
-              The source code is available on
-              <a href="https://github.com/rawlead/portfolio-2" target="_blank" rel="noopener noreferrer">
-                &nbsp;GitHub
-              </a>
-            </p>
-            <p>2018</p>
-          </div>
-        </div>
-
-        <div className="columns">
           <div className="column">
             <figure className="image is-96x96">
               <a
@@ -43,11 +27,53 @@ const Footer = () => (
             </figure>
           </div>
         </div>
+
         <div className="columns">
           <div className="column has-text-centered">
-            <a href="https://bulma.io" target="_blank" rel="noopener noreferrer">
-              <img src="https://bulma.io/images/made-with-bulma--black.png" alt="Made with Bulma" width="128" height="24" />
-            </a>
+            <p className="has-text-centered">
+              Designed and Built by
+              <span className="has-text-weight-bold"> IVAN SHYRAI</span>
+            </p>
+            <p>
+              Made with
+              <a
+                href="https://reactjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &nbsp;React
+              </a>
+              ,&nbsp;
+              <a
+                href="https://nextjs.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Next.js
+              </a>
+              ,&nbsp;
+              <a
+                href="https://bulma.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Bulma
+              </a>
+              &nbsp;and
+              <a
+                href="https://prismic.io"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                &nbsp;Prismic.io
+              </a>
+            </p>
+            <p>
+              <a href="https://github.com/rawlead/portfolio-2" target="_blank" rel="noopener noreferrer">
+                View Source Code
+              </a>
+            </p>
+            <p>2018</p>
           </div>
         </div>
       </div>

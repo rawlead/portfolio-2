@@ -11,7 +11,7 @@ const getProjectsAPI = async (params) => {
       Prismic.Predicates.at('document.type', 'project'),
       {
         // Order by last publication date from most recent to oldest
-        orderings: '[project.date]',
+        orderings: '[my.project.date desc]',
         ...params,
         // params will be extra parameters we can pass through with api calls
         // such as how many documents to return

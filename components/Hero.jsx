@@ -10,6 +10,7 @@ const Hero = () => (
     slowerScrollRate
     tag="figure"
   >
+    {/* OUTER HERO IMAGE */}
     <section className="hero is-bold is-fullheight">
       <div className="hero-cover" />
       <Parallax
@@ -18,6 +19,7 @@ const Hero = () => (
         offsetYMin={-10}
         tag="figure"
       >
+        {/* INNER HERO IMAGE */}
         <div className="hero-inner">
           {/* BIRDS */}
           <div className="bird-container bird-container--one">
@@ -26,6 +28,7 @@ const Hero = () => (
           <div className="bird-container bird-container--two">
             <div className="bird  bird--two" />
           </div>
+          {/* CENTERED CONTENT */}
           <div className="hero-content has-text-centered">
             <Parallax
               className="custom-class"
@@ -176,6 +179,11 @@ const Hero = () => (
           animation-duration: 17s;
           -webkit-animation-delay: .5s;
           animation-delay: .5s;
+        }
+        @media screen and (max-width: 768px) {
+          .hero-inner {
+            margin-top: 0;
+          }
         }
         @-webkit-keyframes fly-cycle {
           100% {

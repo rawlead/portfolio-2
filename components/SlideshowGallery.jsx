@@ -12,12 +12,13 @@ class SlideshowGallery extends React.Component {
   }
 
   plusSlides(n) {
+    const { galleryImages } = this.props;
     const { slideIndex } = this.state;
-    if (slideIndex + n > 5) {
+    if (slideIndex + n > galleryImages.length - 1) {
       this.setState({ slideIndex: 0 });
       return;
     } if (slideIndex + n < 0) {
-      this.setState({ slideIndex: 5 });
+      this.setState({ slideIndex: galleryImages.length - 1 });
       return;
     }
     this.setState(prevState => ({
@@ -31,134 +32,132 @@ class SlideshowGallery extends React.Component {
 
   createSlides() {
     const { slideIndex } = this.state;
-    const { images } = this.props;
-    const slides = [];
-    for (let i = 0; i < images.length; i += 1) {
-      slides.push(
-        <div key={i} className={`fade ${slideIndex === i ? 'swing-out-top-bck' : 'nonactive'}`}>
-          <div className="numbertext has-background-white has-text-weight-bold">
-            {i + 1}
-            &nbsp;/ 6
-          </div>
-          <figure className="image is-3by2">
-            <img src={images[i]} alt={`slide-${i + 1}`} />
-          </figure>
-          <style jsx>
-            {`
-              .active {
-                  display:block;
-              }
-              .nonactive {
-                  display: none;
-              }
-              .image {
-              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+    const { galleryImages } = this.props;
+    const slides = galleryImages.map((item, index) => (
+      <div key={item.gallery_image.url} className={`fade ${slideIndex === index ? 'swing-out-top-bck' : 'nonactive'}`}>
+        <div className="numbertext has-background-white has-text-weight-bold">
+          {/* E.G. 1/6 */}
+          {index + 1}
+          &nbsp;/&nbsp;
+          {galleryImages.length}
+        </div>
+        {/* SLIDE IMAGE */}
+        <figure className="image is-3by2">
+          <img src={item.gallery_image.url} alt={`slide-${item + 1}`} />
+        </figure>
+        <style jsx>
+          {`
+            .active {
+                display:block;
+            }
+            .nonactive {
+                display: none;
+            }
+            .image {
+            box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
 
-              }
-              .image img {
+            }
+            .image img {
+              border-radius: 5px;
+            }
+            .numbertext {
+                color: #000;
+                font-size: 1rem;
+                font-weight:bolder;
+                padding: 8px 12px;
+                position: absolute;
+                z-index: 30;
+                bottom: -30px;
+                left: 20px;
+                transform: translate(-50%, -50%);
                 border-radius: 5px;
+                box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+            }
+            .swing-out-top-bck {
+                -webkit-animation: swing-out-top-bck 0.45s cubic-bezier(0.600, -0.280, 0.735, 0.045) reverse both;
+                        animation: swing-out-top-bck 0.45s cubic-bezier(0.600, -0.280, 0.735, 0.045) reverse both;
               }
-              .numbertext {
-                  color: #000;
-                  font-size: 1rem;
-                  font-weight:bolder;
-                  padding: 8px 12px;
-                  position: absolute;
-                  z-index: 30;
-                  bottom: -30px;
-                  right: -30px;
-                  transform: translate(-50%, -50%);
-                  border-radius: 5px;
-                  box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+            @-webkit-keyframes swing-out-top-bck {
+              0% {
+                -webkit-transform: rotateX(0deg);
+                        transform: rotateX(0deg);
+                -webkit-transform-origin: top;
+                        transform-origin: top;
+                opacity: 1;
               }
-              .swing-out-top-bck {
-                  -webkit-animation: swing-out-top-bck 0.45s cubic-bezier(0.600, -0.280, 0.735, 0.045) reverse both;
-                          animation: swing-out-top-bck 0.45s cubic-bezier(0.600, -0.280, 0.735, 0.045) reverse both;
-                }
-                @-webkit-keyframes swing-out-top-bck {
-                  0% {
-                    -webkit-transform: rotateX(0deg);
-                            transform: rotateX(0deg);
-                    -webkit-transform-origin: top;
-                            transform-origin: top;
-                    opacity: 1;
-                  }
-                  100% {
-                    -webkit-transform: rotateX(-100deg);
-                            transform: rotateX(-100deg);
-                    -webkit-transform-origin: top;
-                            transform-origin: top;
-                    opacity: 0;
-                  }
-                }
-                @keyframes swing-out-top-bck {
-                  0% {
-                    -webkit-transform: rotateX(0deg);
-                            transform: rotateX(0deg);
-                    -webkit-transform-origin: top;
-                            transform-origin: top;
-                    opacity: 1;
-                  }
-                  100% {
-                    -webkit-transform: rotateX(-100deg);
-                            transform: rotateX(-100deg);
-                    -webkit-transform-origin: top;
-                            transform-origin: top;
-                    opacity: 0;
-                  }
-                }
-            `}
-          </style>
-        </div>,
-      );
-    }
+              100% {
+                -webkit-transform: rotateX(-100deg);
+                        transform: rotateX(-100deg);
+                -webkit-transform-origin: top;
+                        transform-origin: top;
+                opacity: 0;
+              }
+            }
+            @keyframes swing-out-top-bck {
+              0% {
+                -webkit-transform: rotateX(0deg);
+                        transform: rotateX(0deg);
+                -webkit-transform-origin: top;
+                        transform-origin: top;
+                opacity: 1;
+              }
+              100% {
+                -webkit-transform: rotateX(-100deg);
+                        transform: rotateX(-100deg);
+                -webkit-transform-origin: top;
+                        transform-origin: top;
+                opacity: 0;
+              }
+            }
+        `}
+        </style>
+      </div>
+    ));
     return slides;
   }
 
   createPreviews() {
-    const { images } = this.props;
+    const { galleryImages } = this.props;
     const { slideIndex } = this.state;
-    const previews = [];
-    for (let i = 0; i < images.length; i += 1) {
-      previews.push(
-        <div key={i} className="column">
-          <figure className="image is-3by2">
-            <img
-              className={slideIndex === i ? 'preview-active' : 'preview-inactive'}
-              src={images[i]}
-              onClick={() => this.currentSlide(i)}
-              role="presentation"
-              alt={`preview-${i}`}
-            />
-          </figure>
-          <style jsx>
-            {`
-              .preview-active {
-                  cursor: pointer;
-              }
-              .preview-inactive {
-                  opacity: .5;
-                  -webkit-filter: grayscale(1);
-                  filter: grayscale(1);
-                  cursor: pointer;
-              }
-              .preview-inactive:hover {
-                  -webkit-filter: grayscale(0);
-                  filter: grayscale(0);
-                    opacity: 1;
-              }
-              .image img {
-                border-radius: 5px;
-                box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
-              }
-              .column {
-                  padding: 0.25rem;
-              }
-            `}
-          </style>
-        </div>,
-      );
-    }
+    const previews = galleryImages.map((item, index) => (
+      <div key={item.gallery_image.url} className="column">
+        {/* PREVIEW IMAGE */}
+        <figure className="image is-3by2">
+          <img
+            className={slideIndex === index ? 'preview-active' : 'preview-inactive'}
+            src={item.gallery_image.url}
+            onClick={() => this.currentSlide(index)}
+            role="presentation"
+            alt={`preview-${index}`}
+          />
+        </figure>
+        <style jsx>
+          {`
+            .preview-active {
+                cursor: pointer;
+            }
+            .preview-inactive {
+                opacity: .5;
+                -webkit-filter: grayscale(1);
+                filter: grayscale(1);
+                cursor: pointer;
+            }
+            .preview-inactive:hover {
+                -webkit-filter: grayscale(0);
+                filter: grayscale(0);
+                  opacity: 1;
+            }
+            .image img {
+              border-radius: 5px;
+              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+            }
+            .column {
+                padding: 0.25rem;
+            }
+          `}
+        </style>
+      </div>
+    ));
     return previews;
   }
 
@@ -182,7 +181,7 @@ class SlideshowGallery extends React.Component {
             {previews}
           </div>
         </Fade>
-
+        {/* GALLERY BUTTONS */}
         <div className="buttons-container">
           <Fade delay={200}>
             {/* PREVIOUS BUTTON */}
@@ -236,7 +235,6 @@ class SlideshowGallery extends React.Component {
             .prev {
               margin-right: .7rem;
             }
-        
             .prev:hover,
             .next:hover {
               opacity: .8;

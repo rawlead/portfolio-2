@@ -1,16 +1,13 @@
 import React from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import { ScaleLoader } from 'react-spinners';
-
-// import Head from 'next/head';
 import Footer from './Footer';
 import Navbar from './Navbar';
-// import { initGA, logPageView } from '../utils/analytics';
 
 class Layout extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.state = { isLoading: false };
   }
 
   componentDidMount() {
@@ -126,7 +123,7 @@ class Layout extends React.Component {
         }
       `}
         </style>
-      </ParallaxProvider >
+      </ParallaxProvider>
     );
   }
 }

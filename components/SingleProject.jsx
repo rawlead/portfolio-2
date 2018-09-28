@@ -5,6 +5,18 @@ import Fade from 'react-reveal/Fade';
 import SlideshowGallery from './SlideshowGallery';
 
 class SingleProject extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isGalleryLarge: false };
+    this.switchGallerySize = this.switchGallerySize.bind(this);
+  }
+
+  switchGallerySize() {
+    this.setState(prevState => ({
+      isGalleryLarge: !prevState.isGalleryLarge,
+    }));
+  }
+
   openCollapse(e) {
     this.funcName = 'openCollapse';
     const content = e.target.previousElementSibling;
@@ -17,6 +29,7 @@ class SingleProject extends React.Component {
     }
   }
 
+  // SEO
   addJSONLD(project, info) {
     this.funcName = 'addJSONLD';
     return {
@@ -51,11 +64,13 @@ class SingleProject extends React.Component {
 
   render() {
     const { content } = this.props;
+    const { isGalleryLarge } = this.state;
     const project = content.data;
     let gradientBackground = {};
+    let technologies = [];
     let titleColor = {};
 
-    // COLORS
+    // COLORS & TECHNOLOGY TAGS
     if (project) {
       gradientBackground = {
         backgroundColor: `${project.back_grad_color_2}`,
@@ -64,6 +79,9 @@ class SingleProject extends React.Component {
       titleColor = {
         color: `${project.title_color}`,
       };
+      technologies = project.technologies.map((item, index) => (
+        <span key={index} style={{ margin: '3px' }} className="tag is-dark">{item.technology}</span>
+      ));
     }
 
     return (
@@ -82,21 +100,9 @@ class SingleProject extends React.Component {
           ) : (
             <div className="container-wrapper" style={gradientBackground}>
               <div className="container sticky-container has-background-white">
-                {/* GITHUB LINK */}
-                {Link.url(project.project_url) && (
-                  <a
-                    className="octocat-container image"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={Link.url(project.project_url)}
-                  >
-                    <div className="octocat" />
-                  </a>
-                )
-                }
                 <div className="columns">
                   {/* GALLERY COLUMN */}
-                  <div className="column">
+                  <div className={`column ${isGalleryLarge && 'is-three-fifths'}`}>
                     <div className="sticky-item">
                       {/* PROJECT TITLE */}
                       <Fade delay={700}>
@@ -104,24 +110,26 @@ class SingleProject extends React.Component {
                       </Fade>
                       {/* GALLLERY COMPONENT */}
                       <SlideshowGallery
-                        images={[
-                          project.project_img_1.url,
-                          project.project_img_2.url,
-                          project.project_img_3.url,
-                          project.project_img_4.url,
-                          project.project_img_5.url,
-                          project.project_img_6.url,
-                        ]}
+                        galleryImages={project.gallery_images}
                       />
+                      <Fade delay={600}>
+                        {/* EXPAND BTN */}
+                        <span className="size-switch-btn is-medium is-hidden-mobile" onClick={() => this.switchGallerySize()}>
+                          <i className="fas fa-expand-arrows-alt fa-lg" />
+                        </span>
+                      </Fade>
                     </div>
                   </div>
                   {/* DESCRIPTION COLUMN */}
-                  <div className="column is-two-fifths content">
+                  <div className="column content">
                     <Fade delay={500}>
                       {/* PRISMIC CMS */}
                       {RichText.render(project.description_overall)}
+                      {/* TECHNOLOGIES */}
+                      <div className="technologies-tags">
+                        {technologies}
+                      </div>
                     </Fade>
-
                     {/* DESCRIPTION COLLAPSE CONTAINER */}
                     <div className="content-collapse">
                       {/* PRISMIC CMS */}
@@ -137,7 +145,30 @@ class SingleProject extends React.Component {
                     />
                   </div>
                 </div>
+                {/* GITHUB LINK */}
+                {Link.url(project.github_url) && (
+                  <a
+                    className="external-link-container external-link-github image"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={Link.url(project.github_url)}
+                  >
+                    <div className="octocat" />
+                  </a>)
+                }
+                {/* HOST LINK */}
+                {Link.url(project.host_url) && (
+                  <a
+                    className="external-link-container external-link-host image"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={Link.url(project.host_url)}
+                  >
+                    <i className="fas fa-external-link-alt fa-2x" />
+                  </a>)
+                }
               </div>
+              {/* SEO SCRIPT */}
               <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={this.addJSONLD(project, content)}
@@ -147,6 +178,17 @@ class SingleProject extends React.Component {
         }
         <style jsx>
           {`
+          .technologies-tags {
+            margin: 1rem 0px;
+          }
+          .size-switch-btn {
+            position:absolute;
+            top: 2.8rem;
+            right: -.6rem;
+            cursor: pointer;
+            padding: .3rem;
+            color: #f2f2f2;
+          }
           .spinner-container {
             margin: 8rem 0;
           }
@@ -156,18 +198,15 @@ class SingleProject extends React.Component {
             border-color: red;
             text-align: center;
           }
-          .content {
-            overflow: hidden;
-          }
           .sticky-container {
-              display: flex;
-              justify-content: center;
-              align-items: flex-start;
-              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
-              border: 1px solid hsl(0, 0%, 86%);
-              padding: 2rem 2rem 4rem 2rem;
-              max-width: 1152px;
-              border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+            border: 1px solid hsl(0, 0%, 86%);
+            padding: 2rem 2rem 4rem 2rem;
+            max-width: 1152px;
+            border-radius: 5px;
             }
             .content-collapse {
               margin-bottom:1rem;
@@ -189,11 +228,17 @@ class SingleProject extends React.Component {
               margin-top: -100px;
               z-index: 100 !important;
             }
-            .octocat-container {
+            .external-link-container {
               position: absolute;
               z-index: 10;
-              bottom:1rem;
-              right: 1rem;
+              bottom: 1rem;
+            }
+            .external-link-host {
+              right: 4rem;
+              color: #0a0a0a;
+            }
+            .external-link-github {
+              right: 1rem;              
             }
             .octocat {
               background: url('../static/github.png');

@@ -13,7 +13,7 @@ const SkillItems = ({ logos, headings }) => {
               <img src={logos[i]} alt={`${headings[i]}-logo`} />
             </figure>
           </div>
-          <p className="heading has-text-weight-bold has-text-grey-light" style={{ fontSize: '1.15rem', textTransform: 'none' }}>{headings[i]}</p>
+          <p className="heading has-text-weight-bold has-text-grey-light" style={{ fontSize: '1rem', textTransform: 'none' }}>{headings[i]}</p>
         </div>
       </div>,
     );
