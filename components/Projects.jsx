@@ -3,6 +3,8 @@ import Fade from 'react-reveal/Fade';
 import { getProjectsAPI } from '../api';
 import SingleProject from './SingleProject';
 
+/* eslint-disable */
+
 class Projects extends React.Component {
   constructor(props) {
     super(props);
@@ -24,8 +26,8 @@ class Projects extends React.Component {
 
   render() {
     const { projects } = this.state;
-    const projectsView = projects.map(project => (
-      <SingleProject key={project.uid} content={project} />
+    const projectsView = projects.map((project, index) => (
+      <SingleProject key={index} content={project} />
     ));
     return (
       <div className="projects-section">

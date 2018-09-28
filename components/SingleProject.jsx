@@ -79,8 +79,8 @@ class SingleProject extends React.Component {
       titleColor = {
         color: `${project.title_color}`,
       };
-      technologies = project.technologies.map((item, index) => (
-        <span key={index} style={{ margin: '3px' }} className="tag is-dark">{item.technology}</span>
+      technologies = project.technologies.map(item => (
+        <span key={item.technology} style={{ margin: '3px' }} className="tag is-dark">{item.technology}</span>
       ));
     }
 

@@ -2,10 +2,9 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 
 const Education = () => (
+  <Fade delay={200} cascade>
 
-  <div className="wrapper">
-    <Fade delay={200} cascade>
-
+    <div className="wrapper">
       <h1 className="is-size-3 section-title section-title__dark">Education</h1>
       <div className="columns">
         <div className="column has-text-centered">
@@ -31,9 +30,8 @@ const Education = () => (
           </div>
         </div>
       </div>
-    </Fade>
-    <style jsx>
-      {`
+      <style jsx>
+        {`
         .section-title {
           margin-bottom: 4rem;
         }
@@ -53,8 +51,10 @@ const Education = () => (
           border-bottom: 1px solid hsl(0, 0%, 86%);
         }
       `}
-    </style>
-  </div>
+      </style>
+    </div>
+  </Fade>
+
 
 );
 
