@@ -55,7 +55,6 @@ class SlideshowGallery extends React.Component {
             }
             .image {
             box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
-
             }
             .image img {
               border-radius: 5px;
@@ -72,6 +71,7 @@ class SlideshowGallery extends React.Component {
                 transform: translate(-50%, -50%);
                 border-radius: 5px;
                 box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+                cursor: default;
             }
             .swing-out-top-bck {
                 -webkit-animation: swing-out-top-bck 0.45s cubic-bezier(0.600, -0.280, 0.735, 0.045) reverse both;
@@ -185,11 +185,11 @@ class SlideshowGallery extends React.Component {
         <div className="buttons-container">
           <Fade delay={200}>
             {/* PREVIOUS BUTTON */}
-            <button className="prev button is-black is-outlined" type="button" onClick={() => this.plusSlides(-1)}>
+            <button className="prev button is-dark is-outlined" type="button" onClick={() => this.plusSlides(-1)}>
               <i className="fas fa-angle-left" />
             </button>
             {/* NEXT BUTTON */}
-            <button className="next button is-black is-outlined" type="button" onClick={() => this.plusSlides(1)}>
+            <button className="next button is-dark is-outlined" type="button" onClick={() => this.plusSlides(1)}>
               <i className="fas fa-angle-right" />
             </button>
           </Fade>

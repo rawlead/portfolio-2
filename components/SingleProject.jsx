@@ -22,10 +22,10 @@ class SingleProject extends React.Component {
     const content = e.target.previousElementSibling;
     if (content.style.maxHeight) {
       content.style.maxHeight = null;
-      e.target.value = 'More...';
+      e.target.value = 'Show more';
     } else {
       content.style.maxHeight = `${content.scrollHeight}px`;
-      e.target.value = 'Less...';
+      e.target.value = 'Show less';
     }
   }
 
@@ -100,6 +100,10 @@ class SingleProject extends React.Component {
           ) : (
             <div className="container-wrapper" style={gradientBackground}>
               <div className="container sticky-container has-background-white">
+                {/* TECHNOLOGIES */}
+                <div className="technologies-tags">
+                  {technologies}
+                </div>
                 <div className="columns">
                   {/* GALLERY COLUMN */}
                   <div className={`column ${isGalleryLarge && 'is-three-fifths'}`}>
@@ -114,8 +118,9 @@ class SingleProject extends React.Component {
                       />
                       <Fade delay={600}>
                         {/* EXPAND BTN */}
-                        <span className="size-switch-btn is-medium is-hidden-mobile" onClick={() => this.switchGallerySize()}>
-                          <i className="fas fa-expand-arrows-alt fa-lg" />
+                        <span className="size-switch-btn is-medium is-hidden-mobile"
+                          onClick={() => this.switchGallerySize()}>
+                          <i className="fas fa-expand fa-lg" />
                         </span>
                       </Fade>
                     </div>
@@ -125,10 +130,6 @@ class SingleProject extends React.Component {
                     <Fade delay={500}>
                       {/* PRISMIC CMS */}
                       {RichText.render(project.description_overall)}
-                      {/* TECHNOLOGIES */}
-                      <div className="technologies-tags">
-                        {technologies}
-                      </div>
                     </Fade>
                     {/* DESCRIPTION COLLAPSE CONTAINER */}
                     <div className="content-collapse">
@@ -138,35 +139,38 @@ class SingleProject extends React.Component {
                       </Fade>
                     </div>
                     <input
-                      className="button is-outlined has-text-weight-bold is-black"
+                      className="button is-outlined has-text-weight-bold is-dark"
                       type="button"
                       onClick={this.openCollapse.bind(this)}
-                      value="More..."
+                      value="Show more"
                     />
                   </div>
                 </div>
-                {/* GITHUB LINK */}
-                {Link.url(project.github_url) && (
-                  <a
-                    className="external-link-container external-link-github image"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={Link.url(project.github_url)}
-                  >
-                    <div className="octocat" />
-                  </a>)
-                }
-                {/* HOST LINK */}
-                {Link.url(project.host_url) && (
-                  <a
-                    className="external-link-container external-link-host image"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={Link.url(project.host_url)}
-                  >
-                    <i className="fas fa-external-link-alt fa-2x" />
-                  </a>)
-                }
+
+                <div className="project-links-container">
+                  {/* GITHUB LINK */}
+                  {Link.url(project.github_url) && (
+                    <a
+                      className="project-link-item project-link__github image"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={Link.url(project.github_url)}
+                    >
+                      <div className="octocat" />
+                    </a>)
+                  }
+                  {/* HOST LINK */}
+                  {Link.url(project.host_url) && (
+                    <a
+                      className="project-link-item project-link__host image"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={Link.url(project.host_url)}
+                    >
+                      <i className="fas fa-external-link-alt fa-2x" />
+                    </a>)
+                  }
+                </div>
               </div>
               {/* SEO SCRIPT */}
               <script
@@ -178,8 +182,14 @@ class SingleProject extends React.Component {
         }
         <style jsx>
           {`
+          .content {
+            position: relative;
+          }
           .technologies-tags {
-            margin: 1rem 0px;
+            position: absolute;
+            cursor: default;
+            bottom: 1rem;
+            right: 1rem;
           }
           .size-switch-btn {
             position:absolute;
@@ -207,67 +217,82 @@ class SingleProject extends React.Component {
             padding: 2rem 2rem 4rem 2rem;
             max-width: 1152px;
             border-radius: 5px;
+          }
+          .content-collapse {
+            margin-bottom:1rem;
+            max-height: 0;
+            overflow: hidden;
+            -webkit-transition: max-height 300ms ease;
+            transition: max-height 300ms ease;
+          }
+          .container-wrapper {
+            padding-top: 9rem;
+            margin-bottom: -3rem;
+            box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+          }
+          .sticky-item {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 15px;
+            margin-top: -100px;
+            z-index: 100 !important;
+          }
+          .project-links-container {
+            position: absolute;
+            z-index: 10;
+            bottom: 4.6rem;
+            right: .5rem;
+            display: flex;
+          }
+          .project-link-item {
+            margin-right: 15px;
+          }
+          .project-link__host {
+            color: hsl(0, 0%, 48%);
+            -webkit-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+          }
+          .project-link__host:hover {
+            color: #363636;
+            -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+          }
+          .octocat {
+            background: url('../static/github.png');
+            background-size: contain;
+            position:relative;
+            z-index: 10;
+            width:33px;
+            height:33px;
+            transition: all .3s ease-in-out;
+          }
+          .octocat:hover {
+            background: url('../static/octocat.png');
+            background-size: contain;
+            transform: scale(1.1);
+            transform: rotate(-360deg);
+            border-radius: 0%;
+            cursor: pointer;
+          }
+          @media screen and (min-width: 770px) {
+            .content {
+              padding-left: 2rem;
             }
-            .content-collapse {
-              margin-bottom:1rem;
-              max-height: 0;
-              overflow: hidden;
-              -webkit-transition: max-height 300ms ease;
-              transition: max-height 300ms ease;
+          }
+          @media screen and (max-width: 769px) {
+            .sticky-container {
+                padding: 2rem 1rem 3rem 1rem;
             }
-            .container-wrapper {
-              padding-top: 9rem;
-              margin-bottom: -3rem;
-              box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+            .technologies-tags {
+              bottom:.3rem;
+              right:.3rem;
+            }
+            .project-links-container {
+              right:0;
+            }
 
-            }
-            .sticky-item {
-              position: -webkit-sticky;
-              position: sticky;
-              top: 15px;
-              margin-top: -100px;
-              z-index: 100 !important;
-            }
-            .external-link-container {
-              position: absolute;
-              z-index: 10;
-              bottom: 1rem;
-            }
-            .external-link-host {
-              right: 4rem;
-              color: #0a0a0a;
-            }
-            .external-link-github {
-              right: 1rem;              
-            }
-            .octocat {
-              background: url('../static/github.png');
-              background-size: contain;
-              position:relative;
-              z-index: 10;
-              width:35px;
-              height:35px;
-              transition: all .3s ease-in-out;
-            }
-            .octocat:hover {
-              background: url('../static/octocat.png');
-              background-size: contain;
-              transform: scale(1.1);
-              transform: rotate(-360deg);
-              border-radius: 0%;
-              cursor: pointer;
-            }
-            @media screen and (min-width: 770px) {
-              .content {
-                padding-left: 2rem;
-              }
-            }
-            @media screen and (max-width: 769px) {
-              .sticky-container {
-                  padding: 2rem 1rem 3rem 1rem;
-              }
-            }
-          `}
+          }
+        `}
         </style>
       </React.Fragment>
     );

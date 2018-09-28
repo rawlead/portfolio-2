@@ -650,21 +650,18 @@
       "commons": 0,
       "static/runtime/webpack.js": 1,
       "static/runtime/main.js": 2,
-      "static/pMy3qbGJ~qJNCNygDU7ak/pages/_app.js": 3,
-      "static/pMy3qbGJ~qJNCNygDU7ak/pages/index.js": 4,
-      "static/pMy3qbGJ~qJNCNygDU7ak/pages/_error.js": 5,
-      "static/KMotdRSpm~Y~NcipMWmOs/pages/_app.js": 6,
-      "static/KMotdRSpm~Y~NcipMWmOs/pages/index.js": 7,
-      "static/KMotdRSpm~Y~NcipMWmOs/pages/_error.js": 8
+      "static/2_aCJVdktaqYFSMP0t~vK/pages/_app.js": 3,
+      "static/2_aCJVdktaqYFSMP0t~vK/pages/index.js": 4,
+      "static/2_aCJVdktaqYFSMP0t~vK/pages/_error.js": 5
     },
     "bySource": {},
     "usedIds": [
       0,
       1,
       2,
-      6,
-      7,
-      8
+      3,
+      4,
+      5
     ]
   }
 }
