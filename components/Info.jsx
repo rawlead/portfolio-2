@@ -170,11 +170,13 @@ const Info = () => (
             <SkillItems
               headings={[
                 'IntelliJ',
+                'Excel',
                 'Photoshop',
                 'Illustrator',
               ]}
               logos={[
                 '../static/logos/intellij.svg',
+                '../static/logos/excel.png',
                 '../static/logos/photoshop.svg',
                 '../static/logos/illustrator.svg',
               ]}

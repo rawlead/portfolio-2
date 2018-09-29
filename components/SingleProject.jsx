@@ -105,7 +105,7 @@ class SingleProject extends React.Component {
                     <div className="sticky-item">
                       {/* PROJECT TITLE */}
                       <Fade delay={700}>
-                        <h4 className=" is-size-5 has-text-weight-bold has-text-right" style={titleColor}>{project.title[0].text}</h4>
+                        <h4 className=" is-size-4 has-text-weight-bold has-text-right" style={titleColor}>{project.title[0].text}</h4>
                       </Fade>
                       {/* GALLLERY COMPONENT */}
                       <SlideshowGallery
@@ -142,8 +142,8 @@ class SingleProject extends React.Component {
                           onClick={() => this.switchCollapse()}
                         >
                           {isCollapseActive
-                            ? 'Show less'
-                            : 'Show more'
+                            ? 'Less'
+                            : 'More'
                           }
                         </button>
                       ) : ''
@@ -196,11 +196,11 @@ class SingleProject extends React.Component {
           }
           .size-switch-btn {
             position:absolute;
-            top: 1.8rem;
+            top: 2rem;
             right: -.6rem;
             cursor: pointer;
             padding: .3rem;
-            color: #f2f2f2;
+            color: #d4d1d1;
           }
           .spinner-container {
             margin: 8rem 0;
@@ -254,7 +254,7 @@ class SingleProject extends React.Component {
             margin-right: 15px;
           }
           .project-link__host {
-            color: hsl(0, 0%, 48%);
+            color: #888888;
             -webkit-transition: all .3s ease-in-out;
             transition: all .3s ease-in-out;
           }
@@ -292,6 +292,7 @@ class SingleProject extends React.Component {
             .technologies-tags {
               bottom:.3rem;
               right:.3rem;
+              margin-left:.3rem;
             }
             .project-links-container {
               right:0;

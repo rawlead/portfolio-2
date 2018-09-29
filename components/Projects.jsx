@@ -30,7 +30,7 @@ class Projects extends React.Component {
       <SingleProject key={index} content={project} />
     ));
     return (
-      <div className="projects-section">
+      <div className="projects-section" style={{background: 'linear-gradient(to right, rgb(187, 187, 187), rgb(204, 204, 204))'}}>
         <Fade delay={500}>
 
           <h1 className="is-size-4 sticky-title section-title section-title__dark">Projects</h1>
@@ -40,8 +40,10 @@ class Projects extends React.Component {
 
         <style jsx>
           {`
+       
             .sticky-title {
-              margin-top: 5rem;
+              padding-top: 2rem;
+              margin-bottom: 2rem;
             }  
         `}
         </style>

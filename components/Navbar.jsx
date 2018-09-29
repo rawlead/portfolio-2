@@ -16,7 +16,7 @@ const Navbar = () => (
         right: 0;
         display: block;
         transition: all .3s ease-in-out;    
-        padding: .4rem 0;  
+        padding: .50rem 0;  
         overflow: hidden;
       }
 

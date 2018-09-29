@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 class Layout extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.state = { isLoading: false };
   }
 
   componentDidMount() {
@@ -36,8 +36,9 @@ class Layout extends React.Component {
           ) : (
             <React.Fragment>
               <Navbar />
-
               {children}
+              <div className="fullscreen-panel fullscreen-panel-left is-hidden-mobile" />
+              <div className="fullscreen-panel fullscreen-panel-right is-hidden-mobile" />
 
               <Footer />
             </React.Fragment>
@@ -46,7 +47,21 @@ class Layout extends React.Component {
         <style global jsx>
           {`
         body {
-          background-color: #f2f2f2;
+          background: linear-gradient(to right, rgb(187, 187, 187), rgb(204, 204, 204));
+        }
+        .fullscreen-panel {
+          position: fixed;
+          top: 0;
+          bottom:0;
+          width: 4vw;
+          background-color: #0a0a0a;
+          opacity: .75;
+        }
+        .fullscreen-panel-left {
+          left:0;
+        }
+        .fullscreen-panel-right {
+          right: 0;
         }
         .preloader {
           position: fixed;

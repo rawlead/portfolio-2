@@ -12,7 +12,7 @@ const Hero = () => (
   >
     {/* OUTER HERO IMAGE */}
     <section className="hero is-bold is-fullheight">
-      <div className="hero-cover" />
+      {/* <div className="hero-cover" /> */}
       <Parallax
         className="hero-parallax"
         offsetYMax={10}
@@ -80,8 +80,8 @@ const Hero = () => (
           position: absolute;
           top:0;
           left: 0;
+          height: 52px;
           right: 0;
-          bottom:0;
           background: #0a0a0a;
           opacity: .75;
         }
@@ -90,15 +90,12 @@ const Hero = () => (
           background-repeat: no-repeat;
           margin-left: auto;
           margin-right: auto;
-          margin-top: 52px;
+          margin-top: 55px;
           background-size: cover;
           height: 100vh;
           width: 92vw;
-          border-left: 2px solid #0A0A0A;
           border-top: 2px solid #0A0A0A;
-          border-right: 2px solid #0A0A0A;
           overflow: hidden;
-          border-radius: 5px;
         }
         .hero-content {
           position:absolute;
