@@ -33,7 +33,7 @@ class Projects extends React.Component {
       <div className="projects-section">
         <Fade delay={500}>
 
-          <h1 className="is-size-3 sticky-title section-title section-title__dark">Projects</h1>
+          <h1 className="is-size-4 sticky-title section-title section-title__dark">Projects</h1>
 
         </Fade>
         {projectsView}

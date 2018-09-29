@@ -45,7 +45,7 @@ const Info = () => (
       >
         <Fade delay={200}>
           <div style={{ minHeight: '50vh' }}>
-            <h1 className="is-size-3 section-title section-title__light">About</h1>
+            <h1 className="is-size-4 section-title section-title__light">About</h1>
             <div className="columns">
               <div className="column content ">
                 <h6 className="has-text-grey-light is-size-5">
@@ -61,12 +61,12 @@ const Info = () => (
       <Fade delay={200} cascade>
 
         <div className="title-row">
-          <h1 className="is-size-3 has-text-weight-bold section-title section-title__light">Technical Skills</h1>
+          <h1 className="is-size-4 has-text-weight-bold section-title section-title__light">Technical Skills</h1>
         </div>
 
         {/* row first */}
         <div className="columns is-marginless">
-          <h1 className="column is-size-4 has-text-weight-bold has-text-grey-light">
+          <h1 className="column is-size-5 has-text-weight-bold has-text-grey-light">
             HTML / CSS
           </h1>
         </div>

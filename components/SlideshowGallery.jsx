@@ -185,11 +185,11 @@ class SlideshowGallery extends React.Component {
         <div className="buttons-container">
           <Fade delay={200}>
             {/* PREVIOUS BUTTON */}
-            <button className="prev button is-dark is-outlined" type="button" onClick={() => this.plusSlides(-1)}>
+            <button className="prev button is-dark" type="button" onClick={() => this.plusSlides(-1)}>
               <i className="fas fa-angle-left" />
             </button>
             {/* NEXT BUTTON */}
-            <button className="next button is-dark is-outlined" type="button" onClick={() => this.plusSlides(1)}>
+            <button className="next button is-dark" type="button" onClick={() => this.plusSlides(1)}>
               <i className="fas fa-angle-right" />
             </button>
           </Fade>

@@ -7,8 +7,9 @@ import SlideshowGallery from './SlideshowGallery';
 class SingleProject extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isGalleryLarge: false };
+    this.state = { isGalleryLarge: false, isCollapseActive: false };
     this.switchGallerySize = this.switchGallerySize.bind(this);
+    this.switchCollapse = this.switchCollapse.bind(this);
   }
 
   switchGallerySize() {
@@ -17,16 +18,10 @@ class SingleProject extends React.Component {
     }));
   }
 
-  openCollapse(e) {
-    this.funcName = 'openCollapse';
-    const content = e.target.previousElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-      e.target.value = 'Show more';
-    } else {
-      content.style.maxHeight = `${content.scrollHeight}px`;
-      e.target.value = 'Show less';
-    }
+  switchCollapse() {
+    this.setState(prevState => ({
+      isCollapseActive: !prevState.isCollapseActive,
+    }));
   }
 
   // SEO
@@ -64,7 +59,7 @@ class SingleProject extends React.Component {
 
   render() {
     const { content } = this.props;
-    const { isGalleryLarge } = this.state;
+    const { isGalleryLarge, isCollapseActive } = this.state;
     const project = content.data;
     let gradientBackground = {};
     let technologies = [];
@@ -110,7 +105,7 @@ class SingleProject extends React.Component {
                     <div className="sticky-item">
                       {/* PROJECT TITLE */}
                       <Fade delay={700}>
-                        <h4 className=" is-size-3 has-text-weight-bold has-text-right" style={titleColor}>{project.title[0].text}</h4>
+                        <h4 className=" is-size-5 has-text-weight-bold has-text-right" style={titleColor}>{project.title[0].text}</h4>
                       </Fade>
                       {/* GALLLERY COMPONENT */}
                       <SlideshowGallery
@@ -132,21 +127,29 @@ class SingleProject extends React.Component {
                       {RichText.render(project.description_overall)}
                     </Fade>
                     {/* DESCRIPTION COLLAPSE CONTAINER */}
-                    <div className="content-collapse">
+                    <div className={`content-collapse ${isCollapseActive ? 'content-collapse-active' : ''}`}>
                       {/* PRISMIC CMS */}
                       <Fade delay={150}>
                         {RichText.render(project.description_collapse)}
                       </Fade>
                     </div>
-                    <input
-                      className="button is-outlined has-text-weight-bold is-dark"
-                      type="button"
-                      onClick={this.openCollapse.bind(this)}
-                      value="Show more"
-                    />
+                    {/* DESCRIPTION COLLAPSE BUTTON */}
+                    {RichText.asText(project.description_collapse) !== ''
+                      ? (
+                        <button
+                          className="button has-text-weight-bold is-dark"
+                          type="button"
+                          onClick={() => this.switchCollapse()}
+                        >
+                          {isCollapseActive
+                            ? 'Show less'
+                            : 'Show more'
+                          }
+                        </button>
+                      ) : ''
+                    }
                   </div>
                 </div>
-
                 <div className="project-links-container">
                   {/* GITHUB LINK */}
                   {Link.url(project.github_url) && (
@@ -193,7 +196,7 @@ class SingleProject extends React.Component {
           }
           .size-switch-btn {
             position:absolute;
-            top: 2.8rem;
+            top: 1.8rem;
             right: -.6rem;
             cursor: pointer;
             padding: .3rem;
@@ -222,8 +225,11 @@ class SingleProject extends React.Component {
             margin-bottom:1rem;
             max-height: 0;
             overflow: hidden;
-            -webkit-transition: max-height 300ms ease;
-            transition: max-height 300ms ease;
+            -webkit-transition: max-height 400ms ease;
+            transition: max-height 400ms ease;
+          }
+          .content-collapse-active {
+            max-height: 100%;
           }
           .container-wrapper {
             padding-top: 9rem;
@@ -250,7 +256,7 @@ class SingleProject extends React.Component {
           .project-link__host {
             color: hsl(0, 0%, 48%);
             -webkit-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
           }
           .project-link__host:hover {
             color: #363636;

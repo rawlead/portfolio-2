@@ -120,8 +120,6 @@ const Hero = () => (
         .myself:hover {
           background: url('../static/me2.jpg');
           background-size: cover;
-          -webkit-transform: scale(1.1);
-          transform: scale(1.1);
           -webkit-transform: rotate(-360deg);
           transform: rotate(-360deg);
           cursor: pointer;
@@ -139,6 +137,8 @@ const Hero = () => (
           animation-timing-function: steps(10);
           -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
+          -webkit-transform: scale(0.5);
+          transform: scale(0.5);
         }
         .bird--one {
           -webkit-animation-duration: 1s;
