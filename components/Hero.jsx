@@ -38,8 +38,8 @@ const Hero = () => (
               tag="figure"
             >
               <Fade delay={600}>
-                <a className="image is-128x128" style={{ margin: '0 auto' }} href="#info">
-                  <div className="myself" />
+                <a className="image is-128x128 c-preview" style={{ margin: '0 auto' }} href="#info">
+                  <div className="myself c-preview__img" />
                 </a>
               </Fade>
             </Parallax>
@@ -92,9 +92,10 @@ const Hero = () => (
           margin-right: auto;
           margin-top: 55px;
           background-size: cover;
+          border-left: 1px solid #0a0a0a;
+          border-right: 1px solid #0a0a0a;
           height: 100vh;
           width: 92vw;
-          border-top: 2px solid #0A0A0A;
           overflow: hidden;
         }
         .hero-content {
@@ -104,22 +105,32 @@ const Hero = () => (
           -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
         }
-        .myself {
+        .image .myself {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
           background: url('../static/me.jpg');
           background-size: cover;
-          -webkit-transition: all .3s ease-in-out;
-          transition: all .3s ease-in-out;
-          will-change: transform;
           width: 128px;
           height: 128px;
           border-radius: 5px;
+          mix-blend-mode: screen;
+          opacity: .9;
         }
-        .myself:hover {
-          background: url('../static/me2.jpg');
-          background-size: cover;
-          -webkit-transform: rotate(-360deg);
-          transform: rotate(-360deg);
+        .image {
           cursor: pointer;
+          background: #0a0a0a;
+          background: -webkit-linear-gradient(-45deg, #000000 0%,#000000 25%,#8561A1 50%,#DF758C 75%,#0a0a0a 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(135deg, #000000 0%,#000000 25%,#8561A1 50%,#DF758C 75%,#0a0a0a 100%);
+          background-size: 400% 400%;
+          background-repeat: no-repeat;
+          position: relative;
+          transition: .5s all;
+        }
+        .image:hover {
+          background-position: 100% 100%;
         }
         .bird {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg');

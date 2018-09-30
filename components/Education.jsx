@@ -3,7 +3,7 @@ import Fade from 'react-reveal/Fade';
 // import { Parallax } from 'react-scroll-parallax';
 
 const Education = () => (
-  <div className="wrapper">
+  <div className="wrapper has-background-white-ter">
     {/* <Parallax
       offsetYMax={0}
       offsetYMin={0}
@@ -41,10 +41,10 @@ const Education = () => (
     <style jsx>
       {`
         .section-title {
-          margin-bottom: 4rem;
+          margin-bottom: 2rem;
         }
         .column {
-          padding-bottom: 5rem;
+          padding-bottom: 3.5rem;
         }
         .columns {
           max-width: 936px;
@@ -52,12 +52,9 @@ const Education = () => (
           margin-right: auto;
         }
         .wrapper {
-          background-color: #fff;
           position: relative;
-          padding-top: 2rem;
-          box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+          padding-top: 1.5rem;
           border-bottom: 1px solid hsl(0, 0%, 86%);
-          margin: 0 4vw;
         }
         @media screen and (max-width: 736px) {
           .wrapper {

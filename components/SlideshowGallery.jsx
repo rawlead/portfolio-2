@@ -35,7 +35,7 @@ class SlideshowGallery extends React.Component {
     const { galleryImages } = this.props;
     const slides = galleryImages.map((item, index) => (
       <div key={item.gallery_image.url} className={`fade ${slideIndex === index ? 'swing-out-top-bck' : 'nonactive'}`}>
-        <div className="numbertext has-background-white has-text-weight-bold">
+        <div className="numbertext has-background-white-ter has-text-weight-bold">
           {/* E.G. 1/6 */}
           {index + 1}
           &nbsp;/&nbsp;

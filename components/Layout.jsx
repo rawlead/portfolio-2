@@ -37,8 +37,8 @@ class Layout extends React.Component {
             <React.Fragment>
               <Navbar />
               {children}
-              <div className="fullscreen-panel fullscreen-panel-left is-hidden-mobile" />
-              <div className="fullscreen-panel fullscreen-panel-right is-hidden-mobile" />
+              <div className="fullscreen-panel fullscreen-panel-left is-hidden-touch" />
+              <div className="fullscreen-panel fullscreen-panel-right is-hidden-touch" />
 
               <Footer />
             </React.Fragment>
@@ -47,7 +47,7 @@ class Layout extends React.Component {
         <style global jsx>
           {`
         body {
-          background: linear-gradient(to right, rgb(187, 187, 187), rgb(204, 204, 204));
+          background: #0a0a0a;
         }
         .fullscreen-panel {
           position: fixed;

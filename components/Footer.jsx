@@ -3,16 +3,16 @@ import Fade from 'react-reveal/Fade';
 import Social from './Social';
 
 const Footer = () => (
-  <footer className="footer has-background-white-ter">
+  <footer className="footer">
     <Fade delay={200}>
       <div className="container">
         <div className="columns" style={{ marginBottom: '3rem' }}>
           <div className="column has-text-centered">
-            <h1 className="is-size-3 section-title section-title__dark">Get in Touch</h1>
+            <h1 className="is-size-3 section-title section-title__light">Get in Touch</h1>
           </div>
         </div>
 
-        <Social linkStyle={{ color: '#4a4a4a' }} />
+        <Social linkStyle={{ color: '#888888' }} />
 
         <div className="columns">
           <div className="column">
@@ -29,7 +29,7 @@ const Footer = () => (
         </div>
 
         <div className="columns">
-          <div className="column has-text-centered">
+          <div className="column has-text-centered has-text-grey-light">
             <p className="has-text-centered">
               Designed and Built by
               <span className="has-text-weight-bold"> IVAN SHYRAI</span>
@@ -89,7 +89,7 @@ const Footer = () => (
           filter: grayscale(100%);
         }
         .footer {
-          padding-top: 8rem;
+          background: #0a0a0a;
         }
         .bulma {
           height: 30px;

@@ -4,18 +4,32 @@ import { Link, RichText } from 'prismic-reactjs';
 import Fade from 'react-reveal/Fade';
 import SlideshowGallery from './SlideshowGallery';
 
+const sizeClasses = [
+  'is-half',
+  'is-three-fifths',
+  'is-two-thirds',
+];
+
 class SingleProject extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isGalleryLarge: false, isCollapseActive: false };
-    this.switchGallerySize = this.switchGallerySize.bind(this);
+    this.state = { isCollapseActive: false, gallerySize: { class: sizeClasses[0], value: 0 } };
+    this.galleryZoomIn = this.galleryZoomIn.bind(this);
+    this.galleryZoomOut = this.galleryZoomOut.bind(this);
     this.switchCollapse = this.switchCollapse.bind(this);
   }
 
-  switchGallerySize() {
+  galleryZoomIn() {
     this.setState(prevState => ({
-      isGalleryLarge: !prevState.isGalleryLarge,
+      gallerySize: {
+        ...prevState.gallerySize,
+        value: prevState.gallerySize.value + 1,
+      },
     }));
+  }
+
+  galleryZoomOut() {
+    this.setState({ gallerySize: { class: sizeClasses[0], value: 0 } })
   }
 
   switchCollapse() {
@@ -23,6 +37,7 @@ class SingleProject extends React.Component {
       isCollapseActive: !prevState.isCollapseActive,
     }));
   }
+
 
   // SEO
   addJSONLD(project, info) {
@@ -59,11 +74,13 @@ class SingleProject extends React.Component {
 
   render() {
     const { content } = this.props;
-    const { isGalleryLarge, isCollapseActive } = this.state;
+    const { isCollapseActive, gallerySize } = this.state;
     const project = content.data;
     let gradientBackground = {};
     let technologies = [];
     let titleColor = {};
+    const gallerySizeClass = sizeClasses[gallerySize.value];
+
 
     // COLORS & TECHNOLOGY TAGS
     if (project) {
@@ -94,14 +111,10 @@ class SingleProject extends React.Component {
             </div>
           ) : (
             <div className="container-wrapper" style={gradientBackground}>
-              <div className="container sticky-container has-background-white">
-                {/* TECHNOLOGIES */}
-                <div className="technologies-tags">
-                  {technologies}
-                </div>
+              <div className="container sticky-container has-background-white-ter">
                 <div className="columns">
                   {/* GALLERY COLUMN */}
-                  <div className={`column ${isGalleryLarge && 'is-three-fifths'}`}>
+                  <div className={`column ${gallerySizeClass}`}>
                     <div className="sticky-item">
                       {/* PROJECT TITLE */}
                       <Fade delay={700}>
@@ -112,11 +125,32 @@ class SingleProject extends React.Component {
                         galleryImages={project.gallery_images}
                       />
                       <Fade delay={600}>
-                        {/* EXPAND BTN */}
-                        <span className="size-switch-btn is-medium is-hidden-mobile"
-                          onClick={() => this.switchGallerySize()}>
-                          <i className="fas fa-expand fa-lg" />
-                        </span>
+                        {/* EXPAND BTNS */}
+                        {gallerySize.value === 2
+                          ? (
+                            /* ZOOM OUT BTN */
+                            <button
+                              className="size-switch-btn button is-dark is-hidden-mobile"
+                              style={{ cursor: 'zoom-out' }}
+                              onClick={() => this.galleryZoomOut()}
+                              type="button"
+                            >
+                              X
+                            </button>
+                          ) : (
+                            /* ZOOM IN BTN */
+                            <button
+                              className="size-switch-btn button is-dark is-hidden-mobile"
+                              style={{ cursor: 'zoom-in' }}
+                              onClick={() => this.galleryZoomIn()}
+                              type="button"
+                            >
+                              <span className="icon is-small">
+                                <i className="fas fa-search-plus" />
+                              </span>
+                            </button>
+                          )
+                        }
                       </Fade>
                     </div>
                   </div>
@@ -150,30 +184,36 @@ class SingleProject extends React.Component {
                     }
                   </div>
                 </div>
-                <div className="project-links-container">
-                  {/* GITHUB LINK */}
-                  {Link.url(project.github_url) && (
-                    <a
-                      className="project-link-item project-link__github image"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={Link.url(project.github_url)}
-                    >
-                      <div className="octocat" />
-                    </a>)
-                  }
-                  {/* HOST LINK */}
-                  {Link.url(project.host_url) && (
-                    <a
-                      className="project-link-item project-link__host image"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      href={Link.url(project.host_url)}
-                    >
-                      <i className="fas fa-external-link-alt fa-2x" />
-                    </a>)
-                  }
-                </div>
+                <Fade delay={500}>
+                  <div className="project-links-container">
+                    {/* GITHUB LINK */}
+                    {Link.url(project.github_url) && (
+                      <a
+                        className="project-link-item project-link__github image"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={Link.url(project.github_url)}
+                      >
+                        <div className="octocat" />
+                      </a>)
+                    }
+                    {/* HOST LINK */}
+                    {Link.url(project.host_url) && (
+                      <a
+                        className="project-link-item project-link__host image"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={Link.url(project.host_url)}
+                      >
+                        <i className="fas fa-external-link-alt fa-2x" />
+                      </a>)
+                    }
+                  </div>
+                  {/* TECHNOLOGIES */}
+                  <div className="technologies-tags">
+                    {technologies}
+                  </div>
+                </Fade>
               </div>
               {/* SEO SCRIPT */}
               <script
@@ -196,11 +236,9 @@ class SingleProject extends React.Component {
           }
           .size-switch-btn {
             position:absolute;
-            top: 2rem;
-            right: -.6rem;
+            top: 2.5rem;
+            right: -.3rem;
             cursor: pointer;
-            padding: .3rem;
-            color: #d4d1d1;
           }
           .spinner-container {
             margin: 8rem 0;

@@ -16,8 +16,10 @@ const Navbar = () => (
         right: 0;
         display: block;
         transition: all .3s ease-in-out;    
-        padding: .50rem 0;  
+        padding: .9rem 0;  
         overflow: hidden;
+        background-color: #0a0a0a;
+        opacity:.75;
       }
 
       .bounce-top {
@@ -30,10 +32,10 @@ const Navbar = () => (
                   transform: translateY(-100px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
-          opacity: 1;
+          opacity: .75;
         }
         24% {
-          opacity: 1;
+          opacity: .75;
         }
         40% {
           -webkit-transform: translateY(-50px);
@@ -73,7 +75,7 @@ const Navbar = () => (
                   transform: translateY(0px);
           -webkit-animation-timing-function: ease-out;
                   animation-timing-function: ease-out;
-          opacity: 1;
+          opacity: .75;
         }
       }
       @keyframes bounce-top {
@@ -82,10 +84,10 @@ const Navbar = () => (
                   transform: translateY(-100px);
           -webkit-animation-timing-function: ease-in;
                   animation-timing-function: ease-in;
-          opacity: 1;
+          opacity: .75;
         }
         24% {
-          opacity: 1;
+          opacity: .75;
         }
         40% {
           -webkit-transform: translateY(-50px);
@@ -125,7 +127,7 @@ const Navbar = () => (
                   transform: translateY(0px);
           -webkit-animation-timing-function: ease-out;
                   animation-timing-function: ease-out;
-          opacity: 1;
+          opacity: .75;
         }
       }
       .text-focus-in {
@@ -141,7 +143,7 @@ const Navbar = () => (
         100% {
           -webkit-filter: blur(0px);
                   filter: blur(0px);
-          opacity: 1;
+          opacity: .75;
         }
       }
       @keyframes text-focus-in {
@@ -153,7 +155,7 @@ const Navbar = () => (
         100% {
           -webkit-filter: blur(0px);
                   filter: blur(0px);
-          opacity: 1;
+          opacity: .75;
         }
       }
         `}
