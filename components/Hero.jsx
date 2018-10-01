@@ -31,12 +31,12 @@ const Hero = () => (
               </a>
             </Fade>
             <Fade delay={800}>
-              <h1 className="title box-effect is-size-1 has-text-weight-bold has-text-grey-lighter">
+              <h1 className="title linear-text box-effect is-size-1 has-text-weight-bold has-text-grey-lighter">
                 Ivan Shyrai
               </h1>
             </Fade>
             <Fade delay={1000}>
-              <h2 className="subtitle has-text-grey-lighter">
+              <h2 className="subtitle linear-text has-text-grey-lighter">
                 Java Full Stack Developer
               </h2>
             </Fade>
@@ -67,14 +67,12 @@ const Hero = () => (
         .hero-inner {
           background: url("../static/barcelona-2.jpg") center bottom;
           background-repeat: no-repeat;
-          margin-left: auto;
-          margin-right: auto;
+          margin-left: 4vw;
+          margin-right: 4vw;
           margin-top: 55px;
           background-size: cover;
-          border-left: 1px solid #0a0a0a;
-          border-right: 1px solid #0a0a0a;
+          box-sizing: border-box;
           height: 100vh;
-          width: 92vw;
           overflow: hidden;
         }
         .hero-content {
@@ -94,7 +92,7 @@ const Hero = () => (
           background-size: cover;
           width: 128px;
           height: 128px;
-          border-radius: 5px;
+          border-radius: 50%;
           mix-blend-mode: screen;
           opacity: .9;
         }
@@ -104,7 +102,7 @@ const Hero = () => (
           background: -webkit-linear-gradient(-45deg, #000000 0%,#000000 25%,#8561A1 50%,#DF758C 75%,#0a0a0a 100%); /* Chrome10-25,Safari5.1-6 */
           background: linear-gradient(135deg, #000000 0%,#000000 25%,#8561A1 50%,#DF758C 75%,#0a0a0a 100%);
           background-size: 400% 400%;
-          border-radius: 5px;
+          border-radius: 50%;
           background-repeat: no-repeat;
           position: relative;
           transition: .2s all;
@@ -114,7 +112,9 @@ const Hero = () => (
         .image:hover {
           background-position: 0;
         }
-        
+        .image:hover .myself {
+        }
+
         .bird {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg');
           background-size: auto 100%;

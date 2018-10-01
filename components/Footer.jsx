@@ -44,8 +44,7 @@ class Footer extends React.Component {
                 <h3 className="is-size-5 has-text-grey-lighter">
                   {mainContent
                     ? (
-                      <a href={Link.url(mainContent.resume, linkResolver)} target="_blank" rel="noopener noreferrer">
-                        <i className="fas fa-file-download" />
+                      <a href={Link.url(mainContent.resume, linkResolver)} className="linear-text" target="_blank" rel="noopener noreferrer">
                         &nbsp;DOWNLOAD RESUME
                       </a>
                     )
@@ -138,6 +137,7 @@ class Footer extends React.Component {
         }
         .footer {
           background: #0a0a0a;
+          padding-top: 5rem;
         }
         .bulma {
           height: 30px;

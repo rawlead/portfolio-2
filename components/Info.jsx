@@ -1,5 +1,4 @@
 import React from 'react';
-import { Parallax } from 'react-scroll-parallax';
 import Fade from 'react-reveal/Fade';
 
 const SkillItems = ({ logos, headings }) => {
@@ -38,35 +37,29 @@ const Info = () => (
   <section className="section" id="info">
     <div className="main-content has-text-centered">
       {/* row main description */}
-      <Parallax
-        offsetYMax={50}
-        offsetYMin={-50}
-        tag="figure"
-      >
-        <Fade delay={200}>
-          <div style={{ minHeight: '40vh' }}>
-            <h1 className="is-size-4 section-title section-title__light">About</h1>
+      <div className="about" style={{ minHeight: '50vh' }}>
+        <div>
+          <Fade delay={200}>
+            <h1 className="is-size-4 section-title section-title__light linear-text">About</h1>
             <div className="columns">
               <div className="column content ">
-                <h6 className="has-text-grey-light is-size-5">
+                <h6 className="has-text-grey-light is-size-5 linear-text">
                   Oracle Certified Java Developer specialised in
                    front-end and back-end development.
                 </h6>
-                <h6 className="has-text-grey-light is-size-5">Available for hire and open to any ideas of cooperation.</h6>
+                <h6 className="has-text-grey-light is-size-5 linear-text">Available for hire and open to any ideas of cooperation.</h6>
               </div>
             </div>
-          </div>
-        </Fade>
-      </Parallax>
+          </Fade>
+        </div>
+      </div>
       <Fade delay={200} cascade>
-
         <div className="title-row">
           <h1 className="is-size-4 has-text-weight-bold section-title section-title__light">Technical Skills</h1>
         </div>
-
         {/* row first */}
         <div className="columns is-marginless">
-          <h1 className="column is-size-5 has-text-weight-bold has-text-grey-light">
+          <h1 className="column is-size-5 has-text-weight-bold has-text-grey-light ">
             HTML / CSS
           </h1>
         </div>
@@ -187,6 +180,12 @@ const Info = () => (
     </div>
     <style jsx>
       {`
+        .about {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
         .main-content {
           padding: 2rem;
           position: relative; 

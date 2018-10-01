@@ -7,7 +7,7 @@ const Social = ({ linkStyle }) => (
         <div className="social-item">
           <a
             href="https://www.facebook.com/ivanshyrai"
-            className="social-item__anchor"
+            className="social-item__anchor linear-text"
             target="_blank"
             rel="noopener noreferrer"
             style={linkStyle}
@@ -19,7 +19,7 @@ const Social = ({ linkStyle }) => (
         <div className="social-item">
           <a
             href="mailto:ivan.shyrai@yahoo.com"
-            className="social-item__anchor"
+            className="social-item__anchor linear-text"
             target="_top"
             style={linkStyle}
           >
@@ -30,7 +30,7 @@ const Social = ({ linkStyle }) => (
         <div className="social-item">
           <a
             href="https://www.linkedin.com/in/ivan-shyrai/"
-            className="social-item__anchor"
+            className="social-item__anchor linear-text"
             target="_blank"
             rel="noopener noreferrer"
             style={linkStyle}
@@ -42,7 +42,7 @@ const Social = ({ linkStyle }) => (
         <div className="social-item">
           <a
             href="https://github.com/rawlead"
-            className="social-item__anchor"
+            className="social-item__anchor linear-text"
             target="_blank"
             rel="noopener noreferrer"
             style={linkStyle}
@@ -59,7 +59,6 @@ const Social = ({ linkStyle }) => (
           margin: 0 1rem;
         }
         .social-item__anchor {
-          color: #4a4a4a;
           font-size: 2rem;
           transition: color .1s ease-in-out;        
         }

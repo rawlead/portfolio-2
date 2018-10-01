@@ -29,7 +29,7 @@ class SingleProject extends React.Component {
   }
 
   galleryZoomOut() {
-    this.setState({ gallerySize: { class: sizeClasses[0], value: 0 } })
+    this.setState({ gallerySize: { class: sizeClasses[0], value: 0 } });
   }
 
   switchCollapse() {

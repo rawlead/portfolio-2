@@ -47,7 +47,7 @@ class Layout extends React.Component {
         <style global jsx>
           {`
         body {
-          background: #0a0a0a;
+          background-color: #0a0a0a;
         }
         .fullscreen-panel {
           position: fixed;
@@ -94,6 +94,7 @@ class Layout extends React.Component {
           text-transform: uppercase;
           padding-bottom: 1rem;
           font-weight: bold;
+          display: block;
         }
         .section-title__dark {
           border-bottom: 3px solid #4a4a4a;
@@ -135,6 +136,15 @@ class Layout extends React.Component {
           opacity: 1;
           -webkit-transform: scale(1);
           transform: scale(1);
+        }
+        .linear-text {
+          background: -webkit-linear-gradient(135deg,#e2a2b0 0%,#dbdbdb 25%,#9e7fb5 50%,#DF758C 75%,#dbdbdb 100%);
+          background: linear-gradient(135deg,#e2a2b0 0%,#dbdbdb 25%,#9e7fb5 50%,#DF758C 75%,#dbdbdb 100%);
+          background-size: 200% auto;
+          background-clip: text;
+          text-fill-color: transparent;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       `}
         </style>
