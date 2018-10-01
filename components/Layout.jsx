@@ -15,7 +15,7 @@ class Layout extends React.Component {
       this.setState({
         isLoading: false,
       });
-    }, 1300);
+    }, 1500);
   }
 
   render() {

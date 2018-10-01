@@ -35,8 +35,8 @@ const SkillItems = ({ logos, headings }) => {
 };
 
 const Info = () => (
-  <section className="section has-background-black" id="info">
-    <div className="main-content has-text-centered has-background-black">
+  <section className="section" id="info">
+    <div className="main-content has-text-centered">
       {/* row main description */}
       <Parallax
         offsetYMax={50}
@@ -46,7 +46,7 @@ const Info = () => (
         <Fade delay={200}>
           <div style={{ minHeight: '40vh' }}>
             <h1 className="is-size-4 section-title section-title__light">About</h1>
-            <div className="columns has-background-black">
+            <div className="columns">
               <div className="column content ">
                 <h6 className="has-text-grey-light is-size-5">
                   Oracle Certified Java Developer specialised in
@@ -187,9 +187,6 @@ const Info = () => (
     </div>
     <style jsx>
       {`
-        .section {
-          overflow: hidden;
-        }
         .main-content {
           padding: 2rem;
           position: relative; 

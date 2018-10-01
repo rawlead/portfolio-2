@@ -7,11 +7,11 @@ const Hero = () => (
 
     {/* OUTER HERO IMAGE */}
     <section className="hero is-bold is-fullheight">
-      {/* <div className="hero-cover" /> */}
       <Parallax
         className="hero-parallax"
-        offsetYMax={10}
-        offsetYMin={-10}
+        offsetYMax={20}
+        offsetYMin={-20}
+        slowerScrollRate
         tag="figure"
       >
         {/* INNER HERO IMAGE */}
@@ -25,37 +25,21 @@ const Hero = () => (
           </div>
           {/* CENTERED CONTENT */}
           <div className="hero-content has-text-centered">
-            <Parallax
-              className="custom-class"
-              offsetYMax={30}
-              offsetYMin={-30}
-              slowerScrollRate={false}
-              tag="figure"
-            >
-              <Fade delay={600}>
-                <a className="image is-128x128 c-preview" style={{ margin: '0 auto' }} href="#info">
-                  <div className="myself c-preview__img" />
-                </a>
-              </Fade>
-            </Parallax>
-            <Parallax
-              className="custom-class"
-              offsetYMax={20}
-              offsetYMin={-20}
-              slowerScrollRate={false}
-              tag="figure"
-            >
-              <Fade delay={800}>
-                <h1 className="title box-effect is-size-1 has-text-weight-bold has-text-grey-lighter">
-                  Ivan Shyrai
-                </h1>
-              </Fade>
-              <Fade delay={1000}>
-                <h2 className="subtitle has-text-grey-lighter">
-                  Java Full Stack Developer
-                </h2>
-              </Fade>
-            </Parallax>
+            <Fade delay={600}>
+              <a className="image is-128x128 c-preview" style={{ margin: '0 auto' }} href="#info">
+                <div className="myself c-preview__img" />
+              </a>
+            </Fade>
+            <Fade delay={800}>
+              <h1 className="title box-effect is-size-1 has-text-weight-bold has-text-grey-lighter">
+                Ivan Shyrai
+              </h1>
+            </Fade>
+            <Fade delay={1000}>
+              <h2 className="subtitle has-text-grey-lighter">
+                Java Full Stack Developer
+              </h2>
+            </Fade>
           </div>
         </div>
       </Parallax>
@@ -120,13 +104,17 @@ const Hero = () => (
           background: -webkit-linear-gradient(-45deg, #000000 0%,#000000 25%,#8561A1 50%,#DF758C 75%,#0a0a0a 100%); /* Chrome10-25,Safari5.1-6 */
           background: linear-gradient(135deg, #000000 0%,#000000 25%,#8561A1 50%,#DF758C 75%,#0a0a0a 100%);
           background-size: 400% 400%;
+          border-radius: 5px;
           background-repeat: no-repeat;
           position: relative;
-          transition: .5s all;
+          transition: .2s all;
+          background-position: 100% 100%;
+
         }
         .image:hover {
-          background-position: 100% 100%;
+          background-position: 0;
         }
+        
         .bird {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg');
           background-size: auto 100%;
