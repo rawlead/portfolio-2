@@ -7,7 +7,7 @@ import Navbar from './Navbar';
 class Layout extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: false };
+    this.state = { isLoading: true };
   }
 
   componentDidMount() {
@@ -15,7 +15,7 @@ class Layout extends React.Component {
       this.setState({
         isLoading: false,
       });
-    }, 1200);
+    }, 1300);
   }
 
   render() {

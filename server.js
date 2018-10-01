@@ -14,7 +14,7 @@ app
 
     server.listen(3000, (err) => {
       if (err) throw err;
-      console.log(' App is ready on 3000 ');
+      console.log(' App is ready ');
     });
   })
   .catch((ex) => {

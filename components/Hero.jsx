@@ -3,13 +3,8 @@ import Fade from 'react-reveal/Fade';
 import { Parallax } from 'react-scroll-parallax';
 
 const Hero = () => (
-  <Parallax
-    className="hero-parallax"
-    offsetYMax={30}
-    offsetYMin={-30}
-    slowerScrollRate
-    tag="figure"
-  >
+  <React.Fragment>
+
     {/* OUTER HERO IMAGE */}
     <section className="hero is-bold is-fullheight">
       {/* <div className="hero-cover" /> */}
@@ -363,6 +358,6 @@ const Hero = () => (
 
       `}
     </style>
-  </Parallax>
+  </React.Fragment>
 );
 export default Hero;
