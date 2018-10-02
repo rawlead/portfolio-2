@@ -160,6 +160,7 @@ class SingleProject extends React.Component {
                       {/* PRISMIC CMS */}
                       {RichText.render(project.description_overall)}
                     </Fade>
+
                     {/* DESCRIPTION COLLAPSE CONTAINER */}
                     <div className={`content-collapse ${isCollapseActive ? 'content-collapse-active' : ''}`}>
                       {/* PRISMIC CMS */}
@@ -182,33 +183,35 @@ class SingleProject extends React.Component {
                         </button>
                       ) : ''
                     }
+                    <Fade delay={300}>
+                      <div className="project-links-container">
+                        {/* GITHUB LINK */}
+                        {Link.url(project.github_url) && (
+                          <a
+                            className="project-link-item project-link__github image"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={Link.url(project.github_url)}
+                          >
+                            <div className="octocat" />
+                          </a>)
+                        }
+                        {/* HOST LINK */}
+                        {Link.url(project.host_url) && (
+                          <a
+                            className="project-link-item project-link__host image"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            href={Link.url(project.host_url)}
+                          >
+                            <i className="fas fa-external-link-alt fa-2x" />
+                          </a>)
+                        }
+                      </div>
+                    </Fade>
                   </div>
                 </div>
                 <Fade delay={500}>
-                  <div className="project-links-container">
-                    {/* GITHUB LINK */}
-                    {Link.url(project.github_url) && (
-                      <a
-                        className="project-link-item project-link__github image"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={Link.url(project.github_url)}
-                      >
-                        <div className="octocat" />
-                      </a>)
-                    }
-                    {/* HOST LINK */}
-                    {Link.url(project.host_url) && (
-                      <a
-                        className="project-link-item project-link__host image"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={Link.url(project.host_url)}
-                      >
-                        <i className="fas fa-external-link-alt fa-2x" />
-                      </a>)
-                    }
-                  </div>
                   {/* TECHNOLOGIES */}
                   <div className="technologies-tags">
                     {technologies}
@@ -282,10 +285,8 @@ class SingleProject extends React.Component {
             z-index: 100 !important;
           }
           .project-links-container {
-            position: absolute;
             z-index: 10;
-            bottom: 4.6rem;
-            right: .5rem;
+            margin: 1rem 0;
             display: flex;
           }
           .project-link-item {
