@@ -40,7 +40,6 @@ class Projects extends React.Component {
 
         <style jsx>
           {`
-          {/* style={{background: 'linear-gradient(to right, rgb(187, 187, 187), rgb(204, 204, 204))'}} */}
             .sticky-title {
               padding-top: 2rem;
               margin-bottom: -2rem;

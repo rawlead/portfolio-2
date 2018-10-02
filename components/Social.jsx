@@ -53,7 +53,6 @@ const Social = ({ linkStyle }) => (
       </div>
       <style jsx>
         {`
-      .container {}
       .social-item {
           display: inline-block;
           margin: 0 1rem;

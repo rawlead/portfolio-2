@@ -151,11 +151,13 @@ const Info = () => (
                 'GIT',
                 'AWS',
                 'Heroku',
+                'Postman',
               ]}
               logos={[
                 '../static/logos/github.png',
                 '../static/logos/amazonwebservices.svg',
                 '../static/logos/heroku.svg',
+                '../static/logos/postman.png',
               ]}
             />
           </div>

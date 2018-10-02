@@ -3,53 +3,47 @@ import Fade from 'react-reveal/Fade';
 import { Parallax } from 'react-scroll-parallax';
 
 const Hero = () => (
-  <React.Fragment>
-
-    {/* OUTER HERO IMAGE */}
-    <section className="hero is-bold is-fullheight">
-      <Parallax
-        className="hero-parallax"
-        offsetYMax={20}
-        offsetYMin={-20}
-        slowerScrollRate
-        tag="figure"
-      >
-        {/* INNER HERO IMAGE */}
-        <div className="hero-inner">
-          {/* BIRDS */}
-          <div className="bird-container bird-container--one">
-            <div className="bird  bird--one" />
-          </div>
-          <div className="bird-container bird-container--two">
-            <div className="bird  bird--two" />
-          </div>
-          {/* CENTERED CONTENT */}
-          <div className="hero-content has-text-centered">
-            <Fade delay={600}>
-              <a className="image is-128x128 c-preview" style={{ margin: '0 auto' }} href="#info">
-                <div className="myself c-preview__img" />
-              </a>
-            </Fade>
-            <Fade delay={800}>
-              <h1 className="title linear-text box-effect is-size-1 has-text-weight-bold has-text-grey-lighter">
-                Ivan Shyrai
-              </h1>
-            </Fade>
-            <Fade delay={1000}>
-              <h2 className="subtitle linear-text has-text-grey-lighter">
-                Java Full Stack Developer
-              </h2>
-            </Fade>
-          </div>
+  <section className="hero is-bold is-fullheight">
+    <Parallax
+      className="hero-parallax"
+      offsetYMax={20}
+      offsetYMin={-20}
+      tag="figure"
+    >
+      {/* INNER HERO IMAGE */}
+      <div className="hero-inner">
+        {/* BIRDS */}
+        <div className="bird-container bird-container--one">
+          <div className="bird  bird--one" />
         </div>
-      </Parallax>
-    </section>
+        <div className="bird-container bird-container--two">
+          <div className="bird  bird--two" />
+        </div>
+        {/* CENTERED CONTENT */}
+        <div className="hero-content has-text-centered">
+          <a className="image is-128x128 c-preview" style={{ margin: '0 auto' }} href="#info">
+            <div className="myself c-preview__img" />
+          </a>
+          <Fade delay={800}>
+            <h1 className="title linear-text box-effect is-size-1 has-text-weight-bold has-text-grey-lighter">
+              Ivan Shyrai
+            </h1>
+          </Fade>
+          <Fade delay={1000}>
+            <h2 className="subtitle linear-text has-text-grey-lighter">
+              Java Full Stack Developer
+            </h2>
+          </Fade>
+        </div>
+      </div>
+    </Parallax>
     <style jsx>
       {`
         .hero-parallax {
           display: inline-block !important;
         }
         .hero {
+          z-index: -1;
           background: url("../static/barcelona-1.jpg") center bottom;
           background-size: cover;
           overflow: hidden;
@@ -107,14 +101,10 @@ const Hero = () => (
           position: relative;
           transition: .2s all;
           background-position: 100% 100%;
-
         }
         .image:hover {
           background-position: 0;
         }
-        .image:hover .myself {
-        }
-
         .bird {
           background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells.svg');
           background-size: auto 100%;
@@ -346,6 +336,7 @@ const Hero = () => (
 
       `}
     </style>
-  </React.Fragment>
+  </section>
+
 );
 export default Hero;
