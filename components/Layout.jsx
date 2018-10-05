@@ -7,27 +7,37 @@ import Navbar from './Navbar';
 class Layout extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isLoading: true };
+    this.state = { isLoading: true, isInternetExplorer: false };
   }
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
         isLoading: false,
+        isInternetExplorer: /*@cc_on!@*/false || !!document.documentMode,
       });
     }, 1500);
   }
 
   render() {
-    const { isLoading } = this.state;
+    const { isLoading, isInternetExplorer } = this.state;
     const { children } = this.props;
+
+    if (isInternetExplorer) {
+      return (
+        <div className="preloader">
+          <h1 className="preloader-content is-size-5" style={{ color: '#f2f2f2' }}>Sorry, Internet Explorer is not supported. Please use another browser (Chrome, Mozilla etc.)</h1>
+        </div>
+      );
+    }
+
     return (
       <ParallaxProvider>
         {isLoading
           ? (
             <div className="preloader">
               <ScaleLoader
-                className="preloader-spinner"
+                className="preloader-content"
                 sizeUnit="px"
                 size={120}
                 color="#f2f2f2"
@@ -72,7 +82,7 @@ class Layout extends React.Component {
           left: 0;
           right: 0;
         }
-        .preloader-spinner {
+        .preloader-content {
           position: absolute;
           top: 50%;
           left: 50%;

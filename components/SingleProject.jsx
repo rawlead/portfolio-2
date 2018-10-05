@@ -261,6 +261,14 @@ class SingleProject extends React.Component {
             padding: 2rem 2rem 4rem 2rem;
             max-width: 1152px;
             border-radius: 5px;
+            opacity: .9;
+            transition: opacity 500ms;
+          }
+          .container-wrapper:hover .sticky-container {
+            opacity: 1;
+          }
+          .container-wrapper:hover {
+            background-color: #0a0a0a !important;
           }
           .content-collapse {
             margin-bottom:1rem;
@@ -273,7 +281,9 @@ class SingleProject extends React.Component {
             max-height: 100%;
           }
           .container-wrapper {
-            padding-top: 9rem;
+            padding-top: 8rem;
+            box-sizing: border-box;
+            border-top: 2rem solid #0a0a0a;
             margin-bottom: -3rem;
             box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
           }
@@ -327,6 +337,7 @@ class SingleProject extends React.Component {
           @media screen and (max-width: 769px) {
             .sticky-container {
                 padding: 2rem 1rem 3rem 1rem;
+                opacity: 1;
             }
             .technologies-tags {
               bottom:.3rem;
