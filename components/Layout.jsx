@@ -25,8 +25,8 @@ class Layout extends React.Component {
 
     if (isInternetExplorer) {
       return (
-        <div className="preloader">
-          <h1 className="preloader-content is-size-5" style={{ color: '#f2f2f2' }}>Sorry, Internet Explorer is not supported. Please use another browser (Chrome, Mozilla etc.)</h1>
+        <div className="has-text-centered">
+          <h1 className="is-size-6">Sorry, Internet Explorer is not supported. Please use another browser (Chrome, Mozilla etc.)</h1>
         </div>
       );
     }
