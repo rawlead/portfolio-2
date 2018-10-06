@@ -25,8 +25,13 @@ class Layout extends React.Component {
 
     if (isInternetExplorer) {
       return (
-        <div className="has-text-centered">
-          <h1 className="is-size-6">Sorry, Internet Explorer is not supported. Please use another browser (Chrome, Mozilla etc.)</h1>
+        <div style={{ paddingBottom: '80px' }} className="has-text-centered">
+          <h1 className="is-size-3">:(</h1>
+          <h1 className="is-size-6">
+            Sorry, Internet Explorer is not supported
+            <br />
+            Please use another browser (Chrome, Safari etc.)
+          </h1>
         </div>
       );
     }
