@@ -59,7 +59,7 @@ const Social = ({ linkStyle }) => (
         }
         .social-item__anchor {
           font-size: 2rem;
-          transition: color .1s ease-in-out;        
+          transition: color .1s ease-in-out;
         }
         .social-item__anchor:hover {
           filter:brightness(200%);;

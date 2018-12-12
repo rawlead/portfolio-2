@@ -17,13 +17,13 @@ const Navbar = () => (
         left: 0;
         right: 0;
         display: block;
-        transition: all .3s ease-in-out;    
-        padding: .9rem 0;  
+        transition: all .3s ease-in-out;
+        padding: .9rem 0;
         overflow: hidden;
         background-color: #0a0a0a;
         opacity:.75;
       }
-  
+
       .bounce-top {
         -webkit-animation: bounce-top 1s 1.2s both;
                 animation: bounce-top 1s 1.2s both;

@@ -16,7 +16,7 @@ class Layout extends React.Component {
         isLoading: false,
         isInternetExplorer: /*@cc_on!@*/false || !!document.documentMode,
       });
-    }, 1500);
+    }, 0);
   }
 
   render() {
@@ -64,6 +64,9 @@ class Layout extends React.Component {
         body {
           background-color: #0a0a0a;
         }
+        .tag {
+          border-radius: 0 !important;
+        }
         .fullscreen-panel {
           position: fixed;
           top: 0;
@@ -99,7 +102,7 @@ class Layout extends React.Component {
           scroll-behavior: smooth;
         }
         .button {
-          border-radius: 5px !important;
+          border-radius: 0 !important;
         }
         .section-title {
           text-align: center;
@@ -113,11 +116,9 @@ class Layout extends React.Component {
         }
         .section-title__dark {
           border-bottom: 3px solid #4a4a4a;
-          border-radius: 5px;
         }
         .section-title__light {
           border-bottom: 3px solid hsl(0, 0%, 86%);
-          border-radius: 5px;
           color: hsl(0, 0%, 86%);
         }
         /*effect-box*/

@@ -128,12 +128,15 @@ class Footer extends React.Component {
         <style jsx>
           {`
         .image {
-          transition: all .1s ease-in-out;        
+          transition: all .1s ease-in-out;
           margin: 0 auto;
+
+           -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+          filter: grayscale(100%);
         }
         .image:hover {
-          -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-          filter: grayscale(100%);
+          -webkit-filter: none; /* Safari 6.0 - 9.0 */
+          filter: none;
         }
         .footer {
           background: #0a0a0a;

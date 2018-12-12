@@ -260,7 +260,6 @@ class SingleProject extends React.Component {
             border: 1px solid hsl(0, 0%, 86%);
             padding: 2rem 2rem 4rem 2rem;
             max-width: 1152px;
-            border-radius: 5px;
             opacity: .9;
             transition: opacity 500ms;
           }

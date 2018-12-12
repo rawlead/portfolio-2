@@ -44,7 +44,7 @@ class Projects extends React.Component {
               padding-top: 2rem;
               margin-bottom: -4rem;
               box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
-            }  
+            }
         `}
         </style>
       </div>

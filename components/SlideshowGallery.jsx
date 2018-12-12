@@ -57,7 +57,6 @@ class SlideshowGallery extends React.Component {
             box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
             }
             .image img {
-              border-radius: 5px;
             }
             .numbertext {
                 color: #000;
@@ -148,7 +147,6 @@ class SlideshowGallery extends React.Component {
                   opacity: 1;
             }
             .image img {
-              border-radius: 5px;
               box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
             }
             .column {

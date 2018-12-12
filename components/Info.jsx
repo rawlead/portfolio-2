@@ -24,8 +24,6 @@ const SkillItems = ({ logos, headings }) => {
         padding: '.6rem 0 0 0',
         borderTop: '1px solid hsl(0, 0%, 30%)',
         borderBottom: '1px solid hsl(0, 0%, 30%)',
-        borderBottomLeftRadius: '5px',
-        borderBottomRightRadius: '5px',
       }}
     >
       {items}
