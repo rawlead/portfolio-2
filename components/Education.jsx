@@ -3,14 +3,14 @@ import Fade from 'react-reveal/Fade';
 // import { Parallax } from 'react-scroll-parallax';
 
 const Education = () => (
-  <div className="wrapper has-background-white-ter">
+  <div className="wrapper">
     {/* <Parallax
       offsetYMax={0}
       offsetYMin={0}
       tag="figure"
     > */}
     <Fade delay={200} cascade>
-      <h1 className="is-size-4 section-title section-title__dark">Education</h1>
+      <h1 className="is-size-4 section-title section-title__dark" id="education">Education</h1>
       <div className="columns">
         <div className="column has-text-centered">
           <div className="content">
@@ -55,6 +55,7 @@ const Education = () => (
           position: relative;
           padding-top: 1.5rem;
           border-bottom: 1px solid hsl(0, 0%, 86%);
+          background-color: #f0e0e0
         }
         @media screen and (max-width: 736px) {
           .wrapper {

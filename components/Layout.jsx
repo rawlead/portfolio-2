@@ -26,12 +26,12 @@ class Layout extends React.Component {
     if (isInternetExplorer) {
       return (
         <div style={{ paddingBottom: '80px' }} className="has-text-centered">
-          <h1 className="is-size-3">:(</h1>
-          <h1 className="is-size-6">
+          <h2 className="is-size-3">:(</h2>
+          <h2 className="is-size-6">
             Sorry, Internet Explorer is not supported
             <br />
             Please use another browser (Chrome, Safari etc.)
-          </h1>
+          </h2>
         </div>
       );
     }
@@ -61,6 +61,22 @@ class Layout extends React.Component {
         }
         <style global jsx>
           {`
+          
+ 
+
+          #about:before, #skills:before, #education:before, #projects:before { 
+          display: block; 
+          content: ""; 
+          height: 90px;
+          margin-top: -90px;
+          visibility: hidden; 
+        }
+        
+        #projects:before {
+           height: 60px;
+           margin-top: -60px;
+        }
+  
         body {
           background-color: #0a0a0a;
         }

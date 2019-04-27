@@ -21,7 +21,7 @@ const Hero = () => (
         </div>
         {/* CENTERED CONTENT */}
         <div className="hero-content has-text-centered">
-          <a className="image is-128x128 c-preview" style={{ margin: '0 auto' }} href="#info">
+          <a className="image is-128x128 c-preview" style={{ margin: '0 auto' }} href="#about">
             <div className="myself c-preview__img" />
           </a>
           <Fade delay={800}>
@@ -31,7 +31,7 @@ const Hero = () => (
           </Fade>
           <Fade delay={1000}>
             <h2 className="subtitle linear-text has-text-grey-lighter">
-              Java Full Stack Developer
+              Software Engineer
             </h2>
           </Fade>
         </div>

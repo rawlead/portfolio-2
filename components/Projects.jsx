@@ -30,10 +30,10 @@ class Projects extends React.Component {
       <SingleProject key={index} content={project} />
     ));
     return (
-      <div className="projects-section" >
+      <div className="projects-section" id="projects">
         <Fade delay={500}>
 
-          <h1 className="is-size-4 has-background-black sticky-title section-title section-title__light">Projects</h1>
+          <h2 className="is-size-4 has-background-black sticky-title section-title section-title__light">Projects</h2>
 
         </Fade>
         {projectsView}
