@@ -32,20 +32,23 @@ const SkillItems = ({ logos, headings }) => {
 };
 
 const Info = () => (
-  <section className="section" id="info">
+  <section className="section">
     <div className="main-content has-text-centered">
       {/* row main description */}
       <div className="about" style={{ minHeight: '50vh' }}>
         <div>
           <Fade delay={200}>
-            <h1 className="is-size-4 section-title section-title__light linear-text">About</h1>
+            <h2 className="is-size-4 section-title section-title__light linear-text" id="about">About</h2>
             <div className="columns">
               <div className="column content ">
                 <h6 className="has-text-grey-light is-size-5 linear-text">
-                  Oracle Certified Java Developer specialised in
+                  Specialised in
                    front-end and back-end development.
                 </h6>
-                <h6 className="has-text-grey-light is-size-5 linear-text">Available for hire and open to any ideas of cooperation.</h6>
+                <h6 className="is-size-5 linear-text">
+                  <i className="fas fa-map-marker-alt" style={{ color: '#ffa5a5' }} />
+                  &nbsp; San Francisco Bay Area
+                </h6>
               </div>
             </div>
           </Fade>
@@ -53,13 +56,13 @@ const Info = () => (
       </div>
       <Fade delay={200} cascade>
         <div className="title-row">
-          <h1 className="is-size-4 has-text-weight-bold section-title section-title__light">Technical Skills</h1>
+          <h2 className="is-size-4 has-text-weight-bold section-title section-title__light" id="skills">Technical Skills</h2>
         </div>
         {/* row first */}
         <div className="columns is-marginless">
-          <h1 className="column is-size-5 has-text-weight-bold has-text-grey-light ">
+          <h2 className="column is-size-5 has-text-weight-bold has-text-grey-light ">
             HTML / CSS
-          </h1>
+          </h2>
         </div>
         <div className="columns is-gapless">
           <div className="column is-marginless">
@@ -95,9 +98,9 @@ const Info = () => (
         {/* row second */}
         <div className="columns">
           <div className="column">
-            <h1 className="skills-col-title is-size-5 has-text-grey-light">
+            <h2 className="skills-col-title is-size-5 has-text-grey-light">
               BACK-END
-            </h1>
+            </h2>
             <SkillItems
               headings={[
                 'Java',
@@ -115,20 +118,20 @@ const Info = () => (
           </div>
 
           <div className="column">
-            <h1 className="skills-col-title is-size-5 has-text-grey-light">
+            <h2 className="skills-col-title is-size-5 has-text-grey-light">
               JAVASCRIPT
-            </h1>
+            </h2>
             <SkillItems
               headings={[
                 'React',
                 'Next',
-                'Vue',
+                'AngularJS',
                 'jQuery',
               ]}
               logos={[
                 '../static/logos/react.svg',
                 '../static/logos/next.png',
-                '../static/logos/vuejs.svg',
+                '../static/logos/angularjs.svg',
                 '../static/logos/jquery.svg',
               ]}
             />
@@ -137,9 +140,9 @@ const Info = () => (
 
         {/* row third */}
         <div className="columns is-marginless">
-          <h1 className="column is-size-5 has-text-weight-bold has-text-grey-light">
+          <h2 className="column is-size-5 has-text-weight-bold has-text-grey-light">
             OTHER
-          </h1>
+          </h2>
         </div>
 
         <div className="columns is-gapless">

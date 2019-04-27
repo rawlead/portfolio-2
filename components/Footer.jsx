@@ -28,16 +28,16 @@ class Footer extends React.Component {
     const { mainContent } = this.state;
 
     return (
-      <footer className="footer">
+      <footer className="footer" id="contact">
         <Fade delay={200}>
           <div className="container">
             <div className="columns" style={{ marginBottom: '2rem' }}>
               <div className="column has-text-centered">
-                <h1 className="is-size-4 section-title section-title__light">Get in Touch</h1>
+                <h2 className="is-size-4 section-title section-title__light">Get in Touch</h2>
               </div>
             </div>
 
-            <Social linkStyle={{ color: '#f2f2f2' }} />
+            <Social linkStyle={{ color: '#f2f2f2' }} wrapperStyle={{ textAlign: 'center' }} />
 
             <div className="columns">
               <div className="column has-text-centered">

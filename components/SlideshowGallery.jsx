@@ -196,7 +196,7 @@ class SlideshowGallery extends React.Component {
           {`
             .gallery-container {
                 position: relative;
-                margin-top: 10px;
+                margin-top: 23px;
             }
             /* Fading animation */
             .fade {

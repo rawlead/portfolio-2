@@ -111,14 +111,14 @@ class SingleProject extends React.Component {
             </div>
           ) : (
             <div className="container-wrapper" style={gradientBackground}>
-              <div className="container sticky-container has-background-white-ter">
+              <div className="container sticky-container">
                 <div className="columns">
                   {/* GALLERY COLUMN */}
                   <div className={`column ${gallerySizeClass}`}>
                     <div className="sticky-item">
                       {/* PROJECT TITLE */}
                       <Fade delay={700}>
-                        <h4 className=" is-size-4 has-text-weight-bold has-text-right" style={titleColor}>{project.title[0].text}</h4>
+                        <h4 className="is-size-4 has-text-weight-bold has-text-left project-title has-text-white-ter">{project.title[0].text}</h4>
                       </Fade>
                       {/* GALLLERY COMPONENT */}
                       <SlideshowGallery
@@ -130,7 +130,7 @@ class SingleProject extends React.Component {
                           ? (
                             /* ZOOM OUT BTN */
                             <button
-                              className="size-switch-btn button is-dark is-hidden-mobile"
+                              className="size-switch-btn button is-black is-hidden-mobile"
                               style={{ cursor: 'zoom-out' }}
                               onClick={() => this.galleryZoomOut()}
                               type="button"
@@ -140,7 +140,7 @@ class SingleProject extends React.Component {
                           ) : (
                             /* ZOOM IN BTN */
                             <button
-                              className="size-switch-btn button is-dark is-hidden-mobile"
+                              className="size-switch-btn button is-black is-hidden-mobile"
                               style={{ cursor: 'zoom-in' }}
                               onClick={() => this.galleryZoomIn()}
                               type="button"
@@ -239,9 +239,9 @@ class SingleProject extends React.Component {
           }
           .size-switch-btn {
             position:absolute;
-            top: 2.5rem;
-            right: -.3rem;
+            right: -.75rem;
             cursor: pointer;
+            top: 2.99rem;
           }
           .spinner-container {
             margin: 8rem 0;
@@ -260,11 +260,8 @@ class SingleProject extends React.Component {
             border: 1px solid hsl(0, 0%, 86%);
             padding: 2rem 2rem 4rem 2rem;
             max-width: 1152px;
-            opacity: .9;
             transition: opacity 500ms;
-          }
-          .container-wrapper:hover .sticky-container {
-            opacity: 1;
+            background-color: #f0e0e0
           }
           .container-wrapper:hover {
             background-color: #0a0a0a !important;
