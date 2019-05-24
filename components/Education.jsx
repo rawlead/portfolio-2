@@ -55,7 +55,7 @@ const Education = () => (
           position: relative;
           padding-top: 1.5rem;
           border-bottom: 1px solid hsl(0, 0%, 86%);
-          background-color: #f0e0e0
+          background-color: #fff;
         }
         @media screen and (max-width: 736px) {
           .wrapper {

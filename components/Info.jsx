@@ -38,7 +38,7 @@ const Info = () => (
       <div className="about" style={{ minHeight: '50vh' }}>
         <div>
           <Fade delay={200}>
-            <h2 className="is-size-4 section-title section-title__light linear-text" id="about">About</h2>
+            <h2 className="is-size-4 section-title section-title__light" id="about">About</h2>
             <div className="columns">
               <div className="column content ">
                 <h6 className="has-text-grey-light is-size-5 linear-text">
@@ -191,7 +191,7 @@ const Info = () => (
         }
         .main-content {
           padding: 2rem;
-          position: relative; 
+          position: relative;
           max-width: 1152px;
           margin: 0 auto;
         }

@@ -9,7 +9,7 @@ class Navbar extends React.Component {
 
   componentDidMount() {
       setTimeout(() => {
-        window.addEventListener('scroll', this.handleScroll);          
+        window.addEventListener('scroll', this.handleScroll);
       }, 500);
   }
 
@@ -86,24 +86,24 @@ class Navbar extends React.Component {
             margin-right: 6px;
            }
 
-     
+
 
           .item-wrapper {
             position: absolute;
             z-index: 200;
             padding-left: 5%;
           }
-          
+
           .navbar-social_scrolled {
             position: fixed;
             opacity: 1;
             border-bottom: 2px solid rgb(190,190,190);
           }
-          
+
           .navbar-social_scrolled .social-wrapper a {
             color: hsl(0,0%,86%);
           }
-    
+
           .bounce-top {
             -webkit-animation: bounce-top 1s 1.2s both;
                     animation: bounce-top 1s 1.2s both;
@@ -240,12 +240,12 @@ class Navbar extends React.Component {
               opacity: .75;
             }
           }
-          
+
           /* Effect 5: same word slide in */
           .cl-effect-5 a {
             overflow: hidden;
           }
-          
+
           .cl-effect-5 a span {
             position: relative;
             display: inline-block;
@@ -253,25 +253,24 @@ class Navbar extends React.Component {
             -moz-transition: -moz-transform 0.3s;
             transition: transform 0.3s;
           }
-          
+
           .cl-effect-5 a span::before {
             position: absolute;
             top: 100%;
             content: attr(data-hover);
-            font-weight: 700;
             color: #ffa5a5;
             -webkit-transform: translate3d(0,0,0);
             -moz-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
           }
-          
+
           .cl-effect-5 a:hover span,
           .cl-effect-5 a:focus span {
             -webkit-transform: translateY(-100%);
             -moz-transform: translateY(-100%);
             transform: translateY(-100%);
           }
-          
+
             `}
         </style>
       </React.Fragment>

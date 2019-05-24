@@ -261,7 +261,7 @@ class SingleProject extends React.Component {
             padding: 2rem 2rem 4rem 2rem;
             max-width: 1152px;
             transition: opacity 500ms;
-            background-color: #f0e0e0
+            background-color: rgb(255,255,255);
           }
           .container-wrapper:hover {
             background-color: #0a0a0a !important;
