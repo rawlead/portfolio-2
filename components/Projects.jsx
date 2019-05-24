@@ -18,7 +18,7 @@ class Projects extends React.Component {
 
   async fetchProjects() {
     // Call the API and request 5 documnets
-    const response = await getProjectsAPI({ pageSize: 5 });
+    const response = await getProjectsAPI();
     this.setState({
       projects: response.results,
     });
@@ -31,19 +31,15 @@ class Projects extends React.Component {
     ));
     return (
       <div className="projects-section" id="projects">
-        <Fade delay={500}>
-
-          <h2 className="is-size-4 has-background-black sticky-title section-title section-title__light">Projects</h2>
-
-        </Fade>
+        <h2 className="is-size-4 sticky-title section-title section-title__light">Projects</h2>
         {projectsView}
 
         <style jsx>
           {`
             .sticky-title {
               padding-top: 2rem;
-              margin-bottom: -4rem;
               box-shadow:0 1rem 1rem -1rem rgba(10,10,10,.2);
+              background-color: #000;
             }
         `}
         </style>
